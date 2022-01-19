@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:remi/src/bloc/login_bloc.dart';
 import 'package:remi/src/bloc/provider.dart';
+import 'package:remi/src/pages/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -86,7 +87,10 @@ class LoginPage extends StatelessWidget {
                 ),
                 _crearBoton(bloc),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => HomePage(title: 'home')));
+                    },
                     child: Text('Registrar'),
                     style: ElevatedButton.styleFrom(
                         primary: Color.fromRGBO(150, 202, 80, 1),
