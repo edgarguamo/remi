@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:remi/src/widget/navitation_drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required String title}) : super(key: key);
@@ -10,34 +12,104 @@ class HomePage extends StatefulWidget {
 const padd = Padding(padding: EdgeInsets.all(30));
 
 class _HomePageState extends State<HomePage> {
+  final appbar_green = Colors.green[700];
+  final List<String> novedades = [
+    'La empresa de soluciones alimentarias ILE ha generado ganancias de 10,000 dolares',
+    'La empresa de soluciones alimentarias ILE ha generado ganancias de 20,000 dolares'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(1, 121, 59, 1),
         title: const Center(child: Text('REMI')),
-        leading: GestureDetector(
-          onTap: () {},
-          child: const Icon(Icons.app_blocking),
-        ),
+        backgroundColor: appbar_green,
+        elevation: 0,
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              onTap: () {},
-              child: const Icon(Icons.account_circle_rounded),
-            ),
-          )
+          IconButton(
+              tooltip: 'Ir a perfil',
+              icon: const Icon(Icons.account_circle),
+              onPressed: () {})
         ],
       ),
       body: Center(
           child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            Container(
+              margin: const EdgeInsets.only(bottom: 50),
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: appbar_green,
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 10,
+                    blurRadius: 10,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    child: const Text(
+                      'Novedades',
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 25),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.arrow_left,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                      Container(
+                        width: 300,
+                        child: CarouselSlider(
+                          items: const [
+                            Text(
+                              'La empresa de soluciones alimentarias ILE ha generado ganancias de 10,000 dolares',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 17),
+                            ),
+                            Text(
+                              'La empresa de soluciones alimentarias ILE ha generado ganancias de 20,000 dolares',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 17),
+                            ),
+                          ],
+                          options: CarouselOptions(
+                              height: 80,
+                              enlargeCenterPage: true,
+                              viewportFraction: 1),
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
             padd,
             SizedBox(
                 width: 350,
-                height: 195,
+                height: 230,
                 child: Card(
                     elevation: 0,
                     shape: RoundedRectangleBorder(
@@ -74,7 +146,7 @@ class _HomePageState extends State<HomePage> {
             padd,
             SizedBox(
                 width: 350,
-                height: 195,
+                height: 230,
                 child: Card(
                     elevation: 0,
                     shape: RoundedRectangleBorder(
