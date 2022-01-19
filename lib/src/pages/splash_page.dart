@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remi/src/pages/home_page.dart';
+import 'package:remi/src/pages/login_page.dart';
 
 class Splash extends StatefulWidget {
   Splash({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _SplashState extends State<Splash> {
 
   _navigateHome() async {
     await Future.delayed(const Duration(milliseconds: 3000), () {});
-    Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => HomePage(title: 'Pipo')));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
 }
