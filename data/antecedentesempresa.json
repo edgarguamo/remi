@@ -1,0 +1,212 @@
+[
+    {
+        "titulo": "GENERALES DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 5
+    },
+    {
+        "titulo": "NOMBRE",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "DIRECCIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "TELEFONO Y FAX O MAIL",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "R.F.C",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "DOMICILIO FISCAL",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ANTIGÜEDAD DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 1
+    },
+    {
+        "titulo": "TIEMPO DE ANTIGÜEDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTATUS LEGAL DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 3
+    },
+    {
+        "titulo": "PERSONA FÍSICA",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "PERSONA MORAL",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "NO REGISTRADA",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTATUS FISCAL",
+        "tipo": "titulo1",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTATUS DE LA EMPRESA",
+        "tipo": "sentencia",
+        "valorMax": 1
+    },
+    {
+        "titulo": "TAMAÑO DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 14
+    },
+    {
+        "titulo": "EMPLEADOS",
+        "tipo": "titulo2",
+        "valorMax": 6
+    },
+    {
+        "titulo": "NÚMERO DE EMPLEADOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OPERATIVOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ADMINISTRATIVOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OTROS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "TOTAL",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VENTAS",
+        "tipo": "titulo2",
+        "valorMax": 3
+    },
+    {
+        "titulo": "DIARIAS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "SEMANALES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "MENSUALES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VALOR DE LOS ACTIVOS",
+        "tipo": "titulo2",
+        "valorMax": 3
+    },
+    {
+        "titulo": "TERRENO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "BIENES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OTROS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "CÁLCULOS",
+        "tipo": "titulo2",
+        "valorMax": 2
+    },
+    {
+        "titulo": "VENTAS / EMPLEADOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VENTAS / ACTIVOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COBERTURA DE MERCADO DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 3
+    },
+    {
+        "titulo": "LOCAL",
+        "tipo": "sentencia",
+        "valorMax": 1
+    },
+    {
+        "titulo": "REGIONAL",
+        "tipo": "sentencia",
+        "valorMax": 1
+    },
+    {
+        "titulo": "INTERNACIONAL",
+        "tipo": "sentencia",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VISIÓN DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 2
+    },
+    {
+        "titulo": "CORTO PLAZO",
+        "tipo": "sentencia",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LARGO PLAZO",
+        "tipo": "sentencia",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO EJECTUVO DE ANTECEDENTES DE LA EMPRESA",
+        "tipo": "titulo1",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO",
+        "tipo": "sentencia",
+        "valorMax": 1
+    }
+]

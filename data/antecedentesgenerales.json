@@ -1,0 +1,412 @@
+[
+    {
+        "titulo": "GENERALES",
+        "tipo": "titulo1",
+        "valorMax": 3
+    },
+    {
+        "titulo": "NOMBRE",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "DIRECCIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "TELEFONO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ANTECEDENTES DEL EMPRESARIO",
+        "tipo": "titulo1",
+        "valorMax": 22
+    },
+    {
+        "titulo": "EL EMPRESARIO",
+        "tipo": "titulo2",
+        "valorMax": 8
+    },
+    {
+        "titulo": "ORIGINARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LUGAR",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO CIVIL",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESCOLARIDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO DE SALUD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIOS DEL EMPRESARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LOS PADRES",
+        "tipo": "titulo2",
+        "valorMax": 9
+    },
+    {
+        "titulo": "NOMBRES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ORIGINARIOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VIVEN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LUGAR",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESCOLARIDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO DE SALUD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO DE LOS PADRES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LOS HERMANOS",
+        "tipo": "titulo2",
+        "valorMax": 5
+    },
+    {
+        "titulo": "NÚMERO DE HERMANOS NACIDOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "NOMBRES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LUGAR DENTRO DE SUS HERMANOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ANTECEDENTES DE LA PAREJA",
+        "tipo": "titulo1",
+        "valorMax": 22
+    },
+    {
+        "titulo": "LA PAREJA",
+        "tipo": "titulo2",
+        "valorMax": 9
+    },
+    {
+        "titulo": "NOMBRE",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ORIGINARIA",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VIVE",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EN QUE LUGAR",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO DE SALUD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESCOLARIDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LOS SUEGROS",
+        "tipo": "titulo2",
+        "valorMax": 9
+    },
+    {
+        "titulo": "NOMBRE",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ORIGINARIOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "VIVEN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LUGAR",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO DE SALUD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESCOLARIDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LOS CUÑADOS",
+        "tipo": "titulo2",
+        "valorMax": 4
+    },
+    {
+        "titulo": "NOMBRE",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "LUGAR DENTRO DE SUS HERMANOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EL MATRIMONIO",
+        "tipo": "titulo1",
+        "valorMax": 8
+    },
+    {
+        "titulo": "AÑOS DE CASADOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "SITUACIÓN AFECTIVA DEL MATRIMONIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "HIJOS",
+        "tipo": "titulo2",
+        "valorMax": 1
+    },
+    {
+        "titulo": "NÚMERO DE HIJOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "EDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "OCUPACIÓN",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO CIVIL",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESCOLARIDAD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ESTADO DE SALUD",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "FILOSOFÍA Y/O CARACTER",
+        "tipo": "titulo1",
+        "valorMax": 2
+    },
+    {
+        "titulo": "HOBBIES, COLOR, PERSONAS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIOS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "METAS PERSONALES",
+        "tipo": "titulo1",
+        "valorMax": 4
+    },
+    {
+        "titulo": "PROFESIONALES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "AFECTIVAS",
+        "tipo": "FISICAS",
+        "valorMax": 1
+    },
+    {
+        "titulo": "FÍSICAS",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "ADMINISTRACIÓN DEL TIEMPO",
+        "tipo": "titulo1",
+        "valorMax": 5
+    },
+    {
+        "titulo": "DIA",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "SEMANA",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "MES",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "AÑO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO EJECUTIVO DE ANTECEDENTES GENERALES",
+        "tipo": "titulo1",
+        "valorMax": 1
+    },
+    {
+        "titulo": "COMENTARIO",
+        "tipo": "enunciado",
+        "valorMax": 1
+    }
+]
