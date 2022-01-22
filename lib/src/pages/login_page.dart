@@ -85,7 +85,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: 30.0,
                 ),
-                _crearBoton(bloc),
+                _crearBoton(bloc, context),
                 ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
@@ -113,11 +113,12 @@ class LoginPage extends StatelessWidget {
             child: TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                  icon: Icon(Icons.alternate_email,
-                      color: Color.fromRGBO(149, 202, 80, 1.0)),
-                  hintText: "ejemplo@correo.com",
-                  labelText: 'Correo electrónico',
-                  counterText: snapshot.data),
+                icon: Icon(Icons.alternate_email,
+                    color: Color.fromRGBO(149, 202, 80, 1.0)),
+                hintText: "ejemplo@correo.com",
+                labelText: 'Correo electrónico',
+                counterText: snapshot.data,
+              ),
               onChanged: bloc.changeEmail,
             ));
       },
@@ -134,22 +135,22 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                  icon: Icon(Icons.lock_outline,
-                      color: Color.fromRGBO(150, 202, 80, 1.0)),
-                  labelText: 'Contraseña',
-                  counterText: snapshot.data),
+                icon: Icon(Icons.lock_outline,
+                    color: Color.fromRGBO(150, 202, 80, 1.0)),
+                labelText: 'Contraseña',
+              ),
               onChanged: bloc.changePasswprd,
             ));
       },
     );
   }
 
-  Widget _crearBoton(LoginBloc bloc) {
+  Widget _crearBoton(LoginBloc bloc, BuildContext context) {
     return StreamBuilder(
       stream: bloc.formValidStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return ElevatedButton(
-          onPressed: snapshot.hasData ? () => _login(bloc) : null,
+          onPressed: snapshot.hasData ? () => _login(bloc, context) : null,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 12.0),
             child: Text('Ingresar'),
@@ -163,8 +164,10 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  _login(LoginBloc bloc) {
+  _login(LoginBloc bloc, BuildContext context) {
     print('email: ${bloc.email}');
     print('password: ${bloc.password}');
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => HomePage(title: 'home')));
   }
 }

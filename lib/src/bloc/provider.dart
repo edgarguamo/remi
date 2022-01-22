@@ -11,6 +11,6 @@ class Provider extends InheritedWidget {
   bool updateShouldNotify(covariant InheritedWidget oldWidget) => true;
 
   static LoginBloc? of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<Provider>()?.loginBloc;
+    return context.dependOnInheritedWidgetOfExactType<Provider>()!.loginBloc;
   }
 }

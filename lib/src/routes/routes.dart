@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remi/src/pages/form_page.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/pages/login_page.dart';
 import 'package:remi/src/pages/properties_page.dart';
@@ -8,5 +9,8 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     '/home': (BuildContext context) => HomePage(title: 'home'),
     '/prop': (BuildContext context) => PropertiesPage(title: 'properties'),
     '/login': (BuildContext context) => LoginPage(),
+    '/form': (BuildContext context) => FormPage(
+          title: 'form page',
+        ),
   };
 }

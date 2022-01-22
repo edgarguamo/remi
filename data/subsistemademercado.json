@@ -1,0 +1,67 @@
+[
+    {
+        "titulo": "TIENE POLITICAS DE PRODUCTO Y/O SERVICIO",
+        "tipo": "titulo1",
+        "valorMax": 5
+    },
+    {
+        "titulo": "RENTABILIDAD DE LOS PRODUCTOS",
+        "tipo": "enunciado",
+        "valorMax": 3
+    },
+    {
+        "titulo": "NUEVOS PRODUCTOS",
+        "tipo": "enunciado",
+        "valorMax": 2
+    },
+    {
+        "titulo": "Segmento",
+        "tipo": "titulo1",
+        "valorMax": 25
+    },
+    {
+        "titulo": "QUIEN ES SU CLIENTE, TIPIFICAR",
+        "tipo": "enunciado",
+        "valorMax": 5
+    },
+    {
+        "titulo": "SABE LA DISTRIBUCION Y PROPORCION POR PRODUCTO Y/O SERVICIO",
+        "tipo": "enunciado",
+        "valorMax": 5
+    },
+    {
+        "titulo": "CONOCE LA MAGNITUD DE MERCADO",
+        "tipo": "enunciado",
+        "valorMax": 5
+    },
+    {
+        "titulo": "SABE LA TENDIENCIA DEL MERCADO, EN BASE A QUE?",
+        "tipo": "titulo2",
+        "valorMax": 5
+    },
+    {
+        "titulo": "INDICADORES CLAVES DE MERCADO",
+        "tipo": "enunciado",
+        "valorMax": 3
+    },
+    {
+        "titulo": "OTRAS FUENTES DE INFORMACION",
+        "tipo": "enunciado",
+        "valorMax": 2
+    },
+    {
+        "titulo": "CONOCE SU MERCADO POTENCIAL",
+        "tipo": "titulo2",
+        "valorMax": 2
+    },
+    {
+        "titulo": "ACTUAL",
+        "tipo": "enunciado",
+        "valorMax": 3
+    },
+    {
+        "titulo": "TENDENCIA",
+        "tipo": "enunciado",
+        "valorMax": 2
+    }
+]

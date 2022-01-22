@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remi/src/pages/form_page.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/pages/properties_page.dart';
 
@@ -24,6 +25,14 @@ class NavigationDrawerWidget extends StatelessWidget {
             onClicked: () => selectedItem(context, 1),
           ),
           const SizedBox(height: 24),
+          buildMenuItem(
+            text: 'Encuesta',
+            icon: Icons.description_outlined,
+            onClicked: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => FormPage(title: 'form')));
+            },
+          ),
           Divider(color: Colors.grey),
           const SizedBox(height: 24),
           buildMenuItem(

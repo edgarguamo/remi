@@ -6,7 +6,8 @@ class LoginBloc with validators {
   final _emailController = BehaviorSubject<String>();
   final _passwordController = BehaviorSubject<String>();
   //Listenmers
-  Stream<String> get emailStream => _emailController.stream;
+  Stream<String> get emailStream =>
+      _emailController.stream.transform(validarEmail);
   Stream<String> get passwordStream =>
       _passwordController.stream.transform(validarCaracteresPassword);
 
