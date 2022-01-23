@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/providers/form_provider.dart';
@@ -15,25 +17,26 @@ const padd = Padding(padding: EdgeInsets.all(30));
 class _FormPageState extends State<FormPage> {
   final appbar_green = Colors.green[700];
 
+  late List<String> respuestas = [];
+
   String? value;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: const Center(child: Text('REMI')),
-        backgroundColor: appbar_green,
-        elevation: 0,
-        actions: <Widget>[
-          IconButton(
-              tooltip: 'Ir a perfil',
-              icon: const Icon(Icons.account_circle),
-              onPressed: () {})
-        ],
-      ),
-      body: _list(),
-    );
+        drawer: NavigationDrawerWidget(),
+        appBar: AppBar(
+          title: const Center(child: Text('REMI')),
+          backgroundColor: appbar_green,
+          elevation: 0,
+          actions: <Widget>[
+            IconButton(
+                tooltip: 'Ir a perfil',
+                icon: const Icon(Icons.account_circle),
+                onPressed: () {})
+          ],
+        ),
+        body: _list());
   }
 
   _formQuestions() {
@@ -41,8 +44,17 @@ class _FormPageState extends State<FormPage> {
   }
 
   _crearBotonEnviar() {
-    return ElevatedButton(
-      onPressed: () {},
+    return FloatingActionButton(
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(respuestas[0]),
+            );
+          },
+        );
+      },
       child: Row(children: [Icon(Icons.save), Text("Guardar")]),
     );
   }
@@ -76,21 +88,34 @@ class _FormPageState extends State<FormPage> {
   List<Widget> _listItems(List<dynamic>? data, BuildContext context) {
     final List<Widget> options = [];
     data?.forEach((element) {
+      final textController = TextEditingController();
       final widgetTemp = SizedBox(
-        child: ListTile(
-          title: Text(element['titulo']),
+        child: Column(
+          children: [
+            ListTile(
+              title: _formatText(element),
+            ),
+            TextFormField(
+              controller: textController,
+              validator: (value) {
+                if (value == null) {
+                  return 'Ingresar texto';
+                }
+              },
+            ),
+          ],
         ),
-        // DropdownButton(
-        //   items: _puntaje(element['valorMax']),
-        //   value: value,
-        //   onChanged: (String? value) {
-        //     this.value = value;
-        //   },
-        // )
       );
+      _getResp(textController.text);
       options.add(widgetTemp);
     });
+    options.add(_crearBotonEnviar());
     return options;
+  }
+
+  List<String> _getResp(String a) {
+    respuestas.add(a);
+    return respuestas;
   }
 
   List<DropdownMenuItem<String>> _puntaje(int element) {
@@ -103,5 +128,23 @@ class _FormPageState extends State<FormPage> {
       data.add(widgetTemp);
     }
     return data;
+  }
+
+  Widget _item(dynamic element) {
+    Widget a = Text('');
+    SizedBox(child: ListTile(title: _formatText(element)));
+    return a;
+  }
+
+  Widget _formatText(dynamic element) {
+    Widget text = Text(element['titulo'], style: TextStyle(fontSize: 16));
+    if (element['tipo'] == 'titulo1') {
+      text = Text(element['titulo'],
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20));
+    } else if (element['tipo'] == 'titulo2') {
+      text = Text(element['titulo'],
+          style: TextStyle(fontStyle: FontStyle.italic, fontSize: 18));
+    }
+    return text;
   }
 }

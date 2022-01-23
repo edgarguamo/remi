@@ -28,17 +28,14 @@ class NavigationDrawerWidget extends StatelessWidget {
           buildMenuItem(
             text: 'Encuesta',
             icon: Icons.description_outlined,
-            onClicked: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => FormPage(title: 'form')));
-            },
+            onClicked: () => selectedItem(context, 2),
           ),
           Divider(color: Colors.grey),
           const SizedBox(height: 24),
           buildMenuItem(
             text: 'Perfil',
             icon: Icons.account_circle,
-            onClicked: () => selectedItem(context, 2),
+            onClicked: () => selectedItem(context, 3),
           ),
         ],
       ),
@@ -77,6 +74,11 @@ void selectedItem(BuildContext context, int index) {
     case 1:
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => PropertiesPage(title: 'properties'),
+      ));
+      break;
+    case 2:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => FormPage(title: 'form'),
       ));
       break;
     default:

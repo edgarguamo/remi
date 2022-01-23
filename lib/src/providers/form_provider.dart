@@ -10,7 +10,7 @@ class _FormProvider {
 
   Future<List<dynamic>> chargeData() async {
     final route_data =
-        await rootBundle.loadString('data/subsistemademercado.json');
+        await rootBundle.loadString('data/antecedentesgenerales.json');
     opciones = json.decode(route_data);
 
     return opciones;
