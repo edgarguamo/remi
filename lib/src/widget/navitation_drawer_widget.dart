@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remi/src/pages/form_page.dart';
+import 'package:remi/src/pages/generales_page.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/pages/properties_page.dart';
 

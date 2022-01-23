@@ -5,19 +5,19 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/providers/form_provider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
 
-class FormPage extends StatefulWidget {
-  FormPage({Key? key, required String title}) : super(key: key);
+class FormPage1 extends StatefulWidget {
+  FormPage1({Key? key, required String title}) : super(key: key);
 
   @override
-  _FormPageState createState() => _FormPageState();
+  _FormPage1State createState() => _FormPage1State();
 }
 
 const padd = Padding(padding: EdgeInsets.all(30));
 
-class _FormPageState extends State<FormPage> {
+class _FormPage1State extends State<FormPage1> {
   final appbar_green = Colors.green[700];
 
-  late List<String> respuestas = [];
+  late List<String> respuestas = ['asdfg'];
 
   String? value;
 
@@ -106,16 +106,10 @@ class _FormPageState extends State<FormPage> {
           ],
         ),
       );
-      _getResp(textController.text);
       options.add(widgetTemp);
     });
     options.add(_crearBotonEnviar());
     return options;
-  }
-
-  List<String> _getResp(String a) {
-    respuestas.add(a);
-    return respuestas;
   }
 
   List<DropdownMenuItem<String>> _puntaje(int element) {
