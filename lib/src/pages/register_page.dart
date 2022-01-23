@@ -5,11 +5,11 @@ import 'package:remi/src/bloc/login_bloc.dart';
 import 'package:remi/src/bloc/provider.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/providers/usuario_provider.dart';
-import 'package:remi/src/utils/utils.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final usuarioProvider = new UsuarioProvider();
-  LoginPage({Key? key}) : super(key: key);
+
+  RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
           Container(
             width: size.width * 0.85,
             margin: EdgeInsets.symmetric(vertical: 90.0),
-            padding: EdgeInsets.symmetric(vertical: 20.0),
+            padding: EdgeInsets.symmetric(vertical: 10.0),
             decoration: BoxDecoration(
                 color: Color.fromRGBO(254, 254, 254, 0.88),
                 borderRadius: BorderRadius.circular(5.0),
@@ -77,22 +77,29 @@ class LoginPage extends StatelessWidget {
                 ]),
             child: Column(
               children: <Widget>[
+                const Text(
+                  'Registro',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30.0,
+                      color: Color.fromRGBO(150, 202, 80, 1)),
+                ),
                 SizedBox(
-                  height: 5.0,
+                  height: 2.0,
                 ),
                 _crearEmail(bloc!),
                 SizedBox(
-                  height: 5.0,
+                  height: 2.0,
                 ),
                 _crearPassword(bloc),
                 SizedBox(
-                  height: 30.0,
+                  height: 20.0,
                 ),
                 _crearBoton(bloc, context),
                 ElevatedButton(
                     onPressed: () =>
-                        Navigator.pushReplacementNamed(context, '/register'),
-                    child: Text('Registrar'),
+                        Navigator.pushReplacementNamed(context, '/login'),
+                    child: Text('Login'),
                     style: ElevatedButton.styleFrom(
                         primary: Color.fromRGBO(150, 202, 80, 1),
                         shape: RoundedRectangleBorder(
@@ -151,7 +158,7 @@ class LoginPage extends StatelessWidget {
       stream: bloc.formValidStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return ElevatedButton(
-          onPressed: snapshot.hasData ? () => _login(bloc, context) : null,
+          onPressed: snapshot.hasData ? () => _register(bloc, context) : null,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 12.0),
             child: Text('Ingresar'),
@@ -165,13 +172,10 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  _login(LoginBloc bloc, BuildContext context) async {
-    Map inf = await usuarioProvider.login(bloc.email, bloc.password);
-    if (inf['ok']) {
-      Navigator.pushReplacementNamed(context, '/home');
-    } else {
-      mostrarAlerta(context, inf['message']);
-    }
+  _register(LoginBloc bloc, BuildContext context) {
+    print('email: ${bloc.email}');
+    print('password: ${bloc.password}');
+    usuarioProvider.newUser(bloc.email, bloc.password);
     // Navigator.of(context)
     //     .push(MaterialPageRoute(builder: (context) => HomePage(title: 'home')));
   }
