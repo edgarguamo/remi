@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:remi/src/pages/generales_page.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/pages/properties_page.dart';
+import 'package:remi/src/pages/empresa_page.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -26,9 +27,14 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           buildMenuItem(
-            text: 'Encuesta',
+            text: 'Encuesta 1',
             icon: Icons.description_outlined,
             onClicked: () => selectedItem(context, 2),
+          ),
+          buildMenuItem(
+            text: 'Encuesta 2',
+            icon: Icons.description_outlined,
+            onClicked: () => selectedItem(context, 3),
           ),
           Divider(color: Colors.grey),
           const SizedBox(height: 24),
@@ -79,6 +85,11 @@ void selectedItem(BuildContext context, int index) {
     case 2:
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => FormPage(title: 'form'),
+      ));
+      break;
+    case 3:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => FormPage2(title: 'form2'),
       ));
       break;
     default:
