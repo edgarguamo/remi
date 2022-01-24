@@ -6,7 +6,7 @@ import 'package:remi/src/models/empresa_model.dart';
 class EmpresaProvider {
   Future<bool> crearEncuestaEmpresa(EmpresaModel empresa) async {
     final url =
-        'https://bancayfinanzasflutter-default-rtdb.firebaseio.com/empresa.json';
+        'https://plataformas-moviles-d4eeb-default-rtdb.firebaseio.com/empresa.json';
 
     await http.post(Uri.parse(url), body: empresaModelToJson(empresa));
 

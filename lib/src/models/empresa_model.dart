@@ -12,59 +12,59 @@ String empresaModelToJson(EmpresaModel data) => json.encode(data.toJson());
 class EmpresaModel {
   EmpresaModel({
     // this.id,
-    this.nombre = '',
-    this.direccion = '',
-    this.contacto = 0,
-    this.rfc = '',
-    this.domicilio = '',
-    this.antiguedad = 0,
-    this.estatus = '',
-    this.moral = '',
-    this.noRegistrada = '',
-    this.fiscal = '',
-    this.empleados = 0,
-    this.administrativos = 0,
-    this.otros = 0,
-    this.total = 0,
-    this.comentarios = '',
-    this.diarias = 0,
-    this.semanales = 0,
-    this.mensuales = 0,
-    this.terreno = 0,
-    this.bienes = 0,
-    this.ventasEmp = 0,
-    this.ventasActivos = 0,
-    this.local = '',
-    this.regional = '',
-    this.internacional = '',
-    this.cortoPlazo = '',
-    this.largoPlazo = '',
-    this.comentarioEjecutivo = '',
+    this.nombre = ' ',
+    this.direccion = ' ',
+    this.contacto = ' ',
+    this.rfc = ' ',
+    this.domicilio = ' ',
+    this.antiguedad = ' ',
+    this.estatus = ' ',
+    this.moral = ' ',
+    this.noRegistrada = ' ',
+    this.fiscal = ' ',
+    this.empleados = ' ',
+    this.administrativos = ' ',
+    this.otros = ' ',
+    this.total = ' ',
+    this.comentarios = ' ',
+    this.diarias = ' ',
+    this.semanales = ' ',
+    this.mensuales = ' ',
+    this.terreno = ' ',
+    this.bienes = ' ',
+    this.ventasEmp = ' ',
+    this.ventasActivos = ' ',
+    this.local = ' ',
+    this.regional = ' ',
+    this.internacional = ' ',
+    this.cortoPlazo = ' ',
+    this.largoPlazo = ' ',
+    this.comentarioEjecutivo = ' ',
   });
 
   // String id;
   String nombre;
   String direccion;
-  int contacto;
+  String contacto;
   String rfc;
   String domicilio;
-  int antiguedad;
+  String antiguedad;
   String estatus;
   String moral;
   String noRegistrada;
   String fiscal;
-  int empleados;
-  int administrativos;
-  int otros;
-  int total;
+  String empleados;
+  String administrativos;
+  String otros;
+  String total;
   String comentarios;
-  int diarias;
-  int semanales;
-  int mensuales;
-  int terreno;
-  int bienes;
-  int ventasEmp;
-  int ventasActivos;
+  String diarias;
+  String semanales;
+  String mensuales;
+  String terreno;
+  String bienes;
+  String ventasEmp;
+  String ventasActivos;
   String local;
   String regional;
   String internacional;

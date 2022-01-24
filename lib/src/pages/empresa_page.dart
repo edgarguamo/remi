@@ -95,23 +95,14 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.direccion = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
-            const Text('\n1.3 TELÉFONO Y FAX O MAIL:', style: title2),
+            const Text('\n1.3 TELÉFONO:', style: title2),
             TextFormField(
               decoration:
                   const InputDecoration(hintText: "Ingrese el teléfono."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.contacto = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.contacto = value!;
               },
             ),
             const Text('\n1.4 R.F.C:', style: title2),
@@ -120,11 +111,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.rfc = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text('\n1.5 DOMICILIO FISCAL:', style: title2),
             TextFormField(
@@ -132,11 +118,6 @@ class MyCustomFormState extends State<MyCustomForm> {
                   hintText: "Ingrese el domicilio fiscal."),
               onSaved: (value) {
                 empresa.fiscal = value!;
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
               },
             ),
             const Text(
@@ -147,12 +128,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               decoration: const InputDecoration(
                   hintText: "Ingrese el tiempo de antigüedad de la empresa."),
               onSaved: (value) {
-                empresa.antiguedad = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.antiguedad = value!;
               },
             ),
             const Text("\n3. ESTATUS LEGAL DE LA EMPRESA", style: title1),
@@ -164,11 +140,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.estatus = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text("\n3.2 PERSONAL MORAL", style: title2),
             TextFormField(
@@ -177,11 +148,6 @@ class MyCustomFormState extends State<MyCustomForm> {
                       "Indique si el estatus legal de la empresa corresponde a una persona moral."),
               onSaved: (value) {
                 empresa.moral = value!;
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
               },
             ),
             const Text("\n3.3 NO REGISTRADA", style: title2),
@@ -192,11 +158,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.noRegistrada = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text("\n4. ESTATUS FISCAL", style: title1),
             TextFormField(
@@ -204,11 +165,6 @@ class MyCustomFormState extends State<MyCustomForm> {
                   hintText: "Ingrese el estatus fiscal de la empresa."),
               onSaved: (value) {
                 empresa.fiscal = value!;
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
               },
             ),
             const Text(
@@ -221,13 +177,9 @@ class MyCustomFormState extends State<MyCustomForm> {
               decoration: const InputDecoration(
                   hintText:
                       "Ingrese la cantidad de empleados de tipo operativos."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.empleados = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.empleados = value!;
               },
             ),
             const Text("\nADMINISTRATIVOS", style: enunciado),
@@ -235,39 +187,27 @@ class MyCustomFormState extends State<MyCustomForm> {
               decoration: const InputDecoration(
                   hintText:
                       "Ingrese la cantidad de empleados de tipo administrativos."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.administrativos = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.administrativos = value!;
               },
             ),
             const Text("\nOTROS", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese la cantidad de empleados de otro tipo."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.otros = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.otros = value!;
               },
             ),
             const Text("\nTOTAL", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese el total de empleados."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.total = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.total = value!;
               },
             ),
             const Text("\nCOMENTARIOS", style: enunciado),
@@ -277,50 +217,33 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.comentarios = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text('\n5.2 VENTAS:', style: title2),
             const Text("\nDIARIAS", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese la cantidad de ventas diarias."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.diarias = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.diarias = value!;
               },
             ),
             const Text("\nSEMANALES", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese la cantidad de ventas semanales."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.semanales = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.semanales = value!;
               },
             ),
             const Text("\nMENSUALES", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese la cantidad de ventas mensuales."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.mensuales = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.mensuales = value!;
               },
             ),
             const Text('\n5.3 VALOR DE LOS ACTIVOS:', style: title2),
@@ -328,39 +251,27 @@ class MyCustomFormState extends State<MyCustomForm> {
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese el valor de los terrenos."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.terreno = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.terreno = value!;
               },
             ),
             const Text("\nBIENES", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese el valor de los bienes."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.bienes = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.bienes = value!;
               },
             ),
             const Text("\nOTROS", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese el valor de otros tipos."),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.otros = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.otros = value!;
               },
             ),
             const Text('\n5.4 CÁLCULOS', style: title2),
@@ -368,26 +279,18 @@ class MyCustomFormState extends State<MyCustomForm> {
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese el calculo de ventas sobre empleados"),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.ventasEmp = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.ventasEmp = value!;
               },
             ),
             const Text("\nVENTAS / ACTIVOS", style: enunciado),
             TextFormField(
               decoration: const InputDecoration(
                   hintText: "Ingrese el calculo de ventas sobre activos"),
+              keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.ventasActivos = int.parse(value!);
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
+                empresa.ventasActivos = value!;
               },
             ),
             const Text("\n6. COBERTURA DE MERCADO DE LA EMPRESA",
@@ -399,11 +302,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.local = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text('\n6.2 REGIONAL:', style: title2),
             TextFormField(
@@ -411,11 +309,6 @@ class MyCustomFormState extends State<MyCustomForm> {
                   hintText: "Indique si la cobertura es de tipo regional."),
               onSaved: (value) {
                 empresa.regional = value!;
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
               },
             ),
             const Text('\n6.3 INTERNACIONAL:', style: title2),
@@ -426,11 +319,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.internacional = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text("\n7. VISIÓN DE LA EMPRESA", style: title1),
             const Text('\n7.1 CORTO PLAZO:', style: title2),
@@ -440,11 +328,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               onSaved: (value) {
                 empresa.cortoPlazo = value!;
               },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
-              },
             ),
             const Text('\n7.2 LARGO PLAZO:', style: title2),
             TextFormField(
@@ -452,11 +335,6 @@ class MyCustomFormState extends State<MyCustomForm> {
                   hintText: "Ingrese la visión de la empresa a largo plazo."),
               onSaved: (value) {
                 empresa.largoPlazo = value!;
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
               },
             ),
             const Text('\n8. COMENTARIO EJECUTIVO:', style: title1),
@@ -466,11 +344,6 @@ class MyCustomFormState extends State<MyCustomForm> {
                       "Ingrese el comentario ejecutivo de antecedentes de la empresa."),
               onSaved: (value) {
                 empresa.comentarioEjecutivo = value!;
-              },
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Enter text';
-                }
               },
             ),
             Padding(
