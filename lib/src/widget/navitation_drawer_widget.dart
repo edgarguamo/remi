@@ -31,6 +31,9 @@ class NavigationDrawerWidget extends StatelessWidget {
             icon: Icons.description_outlined,
             onClicked: () => selectedItem(context, 2),
           ),
+          const SizedBox(
+            height: 24,
+          ),
           buildMenuItem(
             text: 'Encuesta 2',
             icon: Icons.description_outlined,
