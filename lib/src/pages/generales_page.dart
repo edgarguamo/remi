@@ -19,6 +19,9 @@ class FormPage extends StatefulWidget {
 
 const padd = Padding(padding: EdgeInsets.all(30));
 final appbar_green = Colors.green[700];
+final formKey = GlobalKey<FormState>();
+final generalesProvider = new GeneralProvider();
+GeneralesModel generales = new GeneralesModel();
 
 class _FormPageState extends State<FormPage> {
   String value;
@@ -51,9 +54,6 @@ class MyCustomForm extends StatefulWidget {
 }
 
 class MyCustomFormState extends State<MyCustomForm> {
-  final formKey = GlobalKey<FormState>();
-  final generalesProvider = new GeneralProvider();
-  GeneralesModel generales = new GeneralesModel();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -76,6 +76,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('1.1 NOMBRE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empNombre,
               decoration: InputDecoration(
                 hintText: "Ingrese el nombre.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -88,6 +89,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n1.2 DIRECCIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empDireccion,
               decoration: InputDecoration(
                 hintText: "Ingrese la dirección.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -100,6 +102,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n1.3 TELÉFONO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empTelefono,
               decoration: InputDecoration(
                 hintText: "Ingrese el teléfono.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -120,6 +123,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('ORIGINARIO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empOriginario,
               decoration: InputDecoration(
                 hintText: "Ingrese el dato ORIGINARIO del empresario.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -132,6 +136,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nLUGAR:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empLugar,
               decoration: InputDecoration(
                 hintText: "Ingrese el lugar.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -144,6 +149,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empEdad,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -156,6 +162,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO CIVIL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empEstado,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado civil.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -168,6 +175,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la ocupación.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -180,6 +188,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESCOLARIDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empEscolaridad,
               decoration: InputDecoration(
                 hintText: "Ingrese la escolaridad.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -192,6 +201,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO DE SALUD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empSalud,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado de salud.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -205,6 +215,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\nCOMENTARIOS DEL EMPRESARIO:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.empComentarios,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario del empresario.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -221,6 +232,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('NOMBRES:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreNombre,
               decoration: InputDecoration(
                 hintText: "Ingrese los nombres de los padres.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -233,6 +245,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nORIGINARIOS:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreOriginario,
               decoration: InputDecoration(
                 hintText: "Ingrese el dato ORIGINARIO de los padres.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -245,6 +258,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nVIVEN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreViven,
               decoration: InputDecoration(
                 hintText: "Ingrese los padres que viven.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -257,6 +271,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nLUGAR:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreLugar,
               decoration: InputDecoration(
                 hintText: "Ingrese el lugar de residencia.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -269,6 +284,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreEdad,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad respectiva.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -281,6 +297,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreOcupacion,
               decoration: InputDecoration(
                 hintText: "Indique la ocupación.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -293,6 +310,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESCOLARIDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreEscolaridad,
               decoration: InputDecoration(
                 hintText: "Ingrese el nivel de escolaridad.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -305,6 +323,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO DE SALUD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreSalud,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado de salud.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -318,6 +337,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\nCOMENTARIO DE LOS PADRES:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.padreComentarios,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario de los padres.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -332,6 +352,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\nNÚMERO DE HERMANOS NACIDOS:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hermanos,
               decoration: InputDecoration(
                 hintText: "Ingrese el número de hermanos.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -344,6 +365,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nNOMBRES:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.herNombres,
               decoration: InputDecoration(
                 hintText: "Ingrese los nombres de cada hermano.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -356,6 +378,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.herEdad,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad de cada hermano.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -368,6 +391,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.herOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la ocupación respectiva.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -381,6 +405,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\nLUGAR DENTRO DE SUS HERMANOS:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.herLugar,
               decoration: InputDecoration(
                 hintText:
                     "Ingrese el número del lugar que ocupa dentro de sus hermanos.",
@@ -397,6 +422,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text("\n3.1 LA PAREJA", style: gStyle.getSentenceTextStyle()),
             Text('\nNOMBRE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parNombre,
               decoration: InputDecoration(
                 hintText: "Ingrese el nombre de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -409,6 +435,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nORIGINARIA:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parOriginaria,
               decoration: InputDecoration(
                 hintText: "Ingrese el lugar originario de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -421,6 +448,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nVIVE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parVive,
               decoration: InputDecoration(
                 hintText: "Ingrese en donde vive la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -433,6 +461,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEN QUE LUGAR:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parLugar,
               decoration: InputDecoration(
                 hintText: "Ingrese el lugar de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -445,6 +474,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parEdad,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -457,6 +487,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO DE SALUD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parSalud,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado de salud de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -469,6 +500,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la ocupación de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -481,6 +513,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESCOLARIDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parEscolaridad,
               decoration: InputDecoration(
                 hintText: "Ingrese la escolaridad de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -493,6 +526,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nCOMENTARIO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.parComentario,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario de la pareja.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -506,6 +540,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text("\n3.2 LOS SUEGROS", style: gStyle.getSentenceTextStyle()),
             Text('\nNOMBRE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroNombre,
               decoration: InputDecoration(
                 hintText: "Ingrese el nombre de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -518,6 +553,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nORIGINARIOS:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroOriginarios,
               decoration: InputDecoration(
                 hintText: "Ingrese el lugar originario de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -530,6 +566,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nVIVEN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroViven,
               decoration: InputDecoration(
                 hintText: "Ingrese en donde viven los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -542,6 +579,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nLUGAR:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroLugar,
               decoration: InputDecoration(
                 hintText: "Ingrese el lugar de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -554,6 +592,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroEdad,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -566,6 +605,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO DE SALUD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroSalud,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado de salud de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -578,6 +618,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la ocupación de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -590,6 +631,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESCOLARIDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroEscolaridad,
               decoration: InputDecoration(
                 hintText: "Ingrese la escolaridad de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -602,6 +644,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nCOMENTARIO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.suegroComentario,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario de los suegros.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -615,6 +658,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text("\n3.3 LOS CUÑADOS", style: gStyle.getSentenceTextStyle()),
             Text('\nNOMBRE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.cuNombre,
               decoration: InputDecoration(
                 hintText: "Ingrese el nombre de los cuñados.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -627,6 +671,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.cuEdad,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad de los cuñados.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -639,6 +684,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.cuOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la ocupación respectiva.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -652,6 +698,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\nLUGAR DENTRO DE SUS HERMANOS:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.cuLugar,
               decoration: InputDecoration(
                 hintText: "Ingrese el número del lugar que ocupa.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -666,6 +713,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n4.1 AÑOS DE CASADOS:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.mTiempo,
               decoration: InputDecoration(
                 hintText: "Ingrese el tiempo de matrimonio.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -679,6 +727,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n4.2 SITUACIÓN AFECTIVA DEL MATRIMONIO:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.mSituacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la situación afectiva actual.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -692,6 +741,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text("\n4.3 HIJOS ", style: gStyle.getSentenceTextStyle()),
             Text('\nNÚMERO DE HIJOS:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hijosNumero,
               decoration: InputDecoration(
                 hintText: "Ingrese el número de hijos.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -704,6 +754,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nEDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hijosOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la edad respectiva.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -716,6 +767,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nOCUPACIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hijosOcupacion,
               decoration: InputDecoration(
                 hintText: "Ingrese la ocupación respectiva.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -728,6 +780,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO CIVIL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hijosEstado,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado civil respectivo.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -740,6 +793,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESCOLARIDAD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hijosEscolaridad,
               decoration: InputDecoration(
                 hintText: "Ingrese la escolaridad de los hijos.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -752,6 +806,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\nESTADO DE SALUD:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.hijosSalud,
               decoration: InputDecoration(
                 hintText: "Ingrese el estado de salud de los hijos.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -769,6 +824,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n5.1 HOBBIES, COLOR, PERSONAS:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.filoHobbies,
               decoration: InputDecoration(
                 hintText: "Ingrese los hobbies, personas o color favorito.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -781,6 +837,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n5.2 COMENTARIOS:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.filoComentarios,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario de la filosofía y/o carácter.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -794,6 +851,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text("\n6. METAS PERSONALES", style: gStyle.getSubTitleTextStyle()),
             Text('\n6.1 PROFESIONALES:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.metasProfesionales,
               decoration: InputDecoration(
                 hintText: "Ingrese las metas personales.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -806,6 +864,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n6.2 AFECTIVAS:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.metasAfectivas,
               decoration: InputDecoration(
                 hintText: "Ingrese las metas afectivas.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -818,6 +877,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n6.3 FÍSICAS:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.metasFisicas,
               decoration: InputDecoration(
                 hintText: "Ingrese las metas físicas.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -830,6 +890,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n6.4 COMENTARIO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.metasComentarios,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario sobre las metas.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -844,6 +905,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: gStyle.getSubTitleTextStyle()),
             Text('\n7.1 DIA:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.tiempoDia,
               decoration: InputDecoration(
                 hintText: "Ingrese el día.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -856,6 +918,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n7.2 SEMANA:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.tiempoSemana,
               decoration: InputDecoration(
                 hintText: "Ingrese la semana.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -868,6 +931,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n7.3 MES:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.tiempoMes,
               decoration: InputDecoration(
                 hintText: "Ingrese el mes.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -880,6 +944,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n7.4 AÑO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.tiempoAnio,
               decoration: InputDecoration(
                 hintText: "Ingrese el año.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -892,6 +957,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n7.5 COMENTARIO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: generales.tiempoComentario,
               decoration: InputDecoration(
                 hintText:
                     "Ingrese el comentario de la administración del tiempo.",
@@ -906,6 +972,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n8. COMENTARIO EJECUTIVO:',
                 style: gStyle.getSubTitleTextStyle()),
             TextFormField(
+              initialValue: generales.comentarioEjecutivo,
               decoration: InputDecoration(
                 hintText:
                     "Ingrese el comentario ejecutivo de antecedentes generales.",
@@ -926,12 +993,17 @@ class MyCustomFormState extends State<MyCustomForm> {
                   color: Colors.white,
                 ),
                 onPressed: () {
+                  if (generales.id != null) {
+                    generalesProvider.crearEncuestaGeneral(generales);
+                  } else {
+                    generalesProvider.editarGenerales(generales);
+                  }
                   if (formKey.currentState.validate()) {
                     Scaffold.of(context).showSnackBar(const SnackBar(
                         content: Text('Datos cargados correctamente')));
                   }
                   formKey.currentState.save();
-                  generalesProvider.crearEncuestaGeneral(generales);
+                  Navigator.pushNamed(context, '/prop');
                 },
                 label: Text(
                   'Submit',

@@ -11,7 +11,7 @@ String empresaModelToJson(EmpresaModel data) => json.encode(data.toJson());
 
 class EmpresaModel {
   EmpresaModel({
-    // this.id,
+    this.id,
     this.nombre = ' ',
     this.direccion = ' ',
     this.contacto = ' ',
@@ -32,6 +32,7 @@ class EmpresaModel {
     this.mensuales = ' ',
     this.terreno = ' ',
     this.bienes = ' ',
+    this.aquellos = ' ',
     this.ventasEmp = ' ',
     this.ventasActivos = ' ',
     this.local = ' ',
@@ -42,7 +43,7 @@ class EmpresaModel {
     this.comentarioEjecutivo = ' ',
   });
 
-  // String id;
+  String id;
   String nombre;
   String direccion;
   String contacto;
@@ -63,6 +64,7 @@ class EmpresaModel {
   String mensuales;
   String terreno;
   String bienes;
+  String aquellos;
   String ventasEmp;
   String ventasActivos;
   String local;
@@ -73,7 +75,7 @@ class EmpresaModel {
   String comentarioEjecutivo;
 
   factory EmpresaModel.fromJson(Map<String, dynamic> json) => EmpresaModel(
-        // id: json["id"],
+        id: json["id"],
         nombre: json["nombre"],
         direccion: json["direccion"],
         contacto: json["contacto"],
@@ -94,6 +96,7 @@ class EmpresaModel {
         mensuales: json["mensuales"],
         terreno: json["terreno"],
         bienes: json["bienes"],
+        aquellos: json["aquellos"],
         ventasEmp: json["ventas_emp"],
         ventasActivos: json["ventas_activos"],
         local: json["local"],
@@ -105,7 +108,7 @@ class EmpresaModel {
       );
 
   Map<String, dynamic> toJson() => {
-        // "id": id,
+        "id": id,
         "nombre": nombre,
         "direccion": direccion,
         "contacto": contacto,
@@ -126,6 +129,7 @@ class EmpresaModel {
         "mensuales": mensuales,
         "terreno": terreno,
         "bienes": bienes,
+        "aquellos": aquellos,
         "ventas_emp": ventasEmp,
         "ventas_activos": ventasActivos,
         "local": local,

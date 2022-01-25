@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:remi/src/models/empresa_model.dart';
@@ -19,12 +20,21 @@ class FormPage2 extends StatefulWidget {
 
 const padd = Padding(padding: EdgeInsets.all(30));
 final appbar_green = Colors.green[700];
+final formKey = GlobalKey<FormState>();
+final empresaProvider = new EmpresaProvider();
+
+EmpresaModel empresa = new EmpresaModel();
 
 class _FormPage2State extends State<FormPage2> {
   String value;
 
   @override
   Widget build(BuildContext context) {
+    final EmpresaModel prod = ModalRoute.of(context).settings.arguments;
+    if (prod != null) {
+      empresa = prod;
+    }
+
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
@@ -57,9 +67,6 @@ class MyCustomForm extends StatefulWidget {
 }
 
 class MyCustomFormState extends State<MyCustomForm> {
-  final formKey = GlobalKey<FormState>();
-  final empresaProvider = new EmpresaProvider();
-  EmpresaModel empresa = new EmpresaModel();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -75,6 +82,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               child: Text(
                 'ANTECEDENTES DE LA EMPRESA\n',
                 style: gStyle.getTytleTextStyle(),
+                textAlign: TextAlign.center,
               ),
             ),
             Text(
@@ -83,6 +91,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('1.1 NOMBRE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.nombre,
               decoration: InputDecoration(
                 hintText: "Ingrese el nombre.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -100,6 +109,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n1.2 DIRECCIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.direccion,
               decoration: InputDecoration(
                 hintText: "Ingrese la dirección.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -112,6 +122,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n1.3 TELÉFONO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.contacto,
               decoration: InputDecoration(
                 hintText: "Ingrese el teléfono.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -125,6 +136,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n1.4 R.F.C:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.rfc,
               decoration: InputDecoration(
                 hintText: "Ingrese el R.F.C.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -138,6 +150,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n1.5 DOMICILIO FISCAL:',
                 style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.domicilio,
               decoration: InputDecoration(
                 hintText: "Ingrese el domicilio fiscal.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -153,6 +166,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSubTitleTextStyle(),
             ),
             TextFormField(
+              initialValue: empresa.antiguedad,
               decoration: InputDecoration(
                 hintText: "Ingrese el tiempo de antigüedad de la empresa.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -167,6 +181,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: gStyle.getSubTitleTextStyle()),
             Text("\n3.1 PERSONA FÍSICA", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.estatus,
               decoration: InputDecoration(
                 hintText:
                     "Indique si el estatus legal de la empresa corresponde a una persona física.",
@@ -180,6 +195,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\n3.2 PERSONAL MORAL", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.moral,
               decoration: InputDecoration(
                 hintText:
                     "Indique si el estatus legal de la empresa corresponde a una persona moral.",
@@ -193,6 +209,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\n3.3 NO REGISTRADA", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.noRegistrada,
               decoration: InputDecoration(
                 hintText:
                     "Indique si el estatus legal de la empresa no se encuentra registrado.",
@@ -206,6 +223,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\n4. ESTATUS FISCAL", style: gStyle.getSubTitleTextStyle()),
             TextFormField(
+              initialValue: empresa.fiscal,
               decoration: InputDecoration(
                 hintText: "Ingrese el estatus fiscal de la empresa.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -224,6 +242,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: gStyle.getSentenceTextStyle()),
             Text("\nOPERATIVOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.empleados,
               decoration: InputDecoration(
                 hintText:
                     "Ingrese la cantidad de empleados de tipo operativos.",
@@ -238,6 +257,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nADMINISTRATIVOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.administrativos,
               decoration: InputDecoration(
                 hintText:
                     "Ingrese la cantidad de empleados de tipo administrativos.",
@@ -252,6 +272,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nOTROS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.otros,
               decoration: InputDecoration(
                 hintText: "Ingrese la cantidad de empleados de otro tipo.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -265,6 +286,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nTOTAL", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.total,
               decoration: InputDecoration(
                 hintText: "Ingrese el total de empleados.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -278,6 +300,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nCOMENTARIOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.comentarios,
               decoration: InputDecoration(
                 hintText: "Ingrese el comentario sobre los empleados.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -291,6 +314,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n5.2 VENTAS:', style: gStyle.getSentenceTextStyle()),
             Text("\nDIARIAS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.diarias,
               decoration: InputDecoration(
                 hintText: "Ingrese la cantidad de ventas diarias.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -304,6 +328,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nSEMANALES", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.semanales,
               decoration: InputDecoration(
                 hintText: "Ingrese la cantidad de ventas semanales.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -317,6 +342,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nMENSUALES", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.mensuales,
               decoration: InputDecoration(
                 hintText: "Ingrese la cantidad de ventas mensuales.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -332,6 +358,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: gStyle.getSentenceTextStyle()),
             Text("\nTERRENO", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.terreno,
               decoration: InputDecoration(
                 hintText: "Ingrese el valor de los terrenos.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -345,6 +372,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nBIENES", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.bienes,
               decoration: InputDecoration(
                 hintText: "Ingrese el valor de los bienes.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -358,6 +386,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nOTROS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.aquellos,
               decoration: InputDecoration(
                 hintText: "Ingrese el valor de otros tipos.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -366,12 +395,13 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.otros = value;
+                empresa.aquellos = value;
               },
             ),
             Text('\n5.4 CÁLCULOS', style: gStyle.getSentenceTextStyle()),
             Text("\nVENTAS / EMPLEADOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.ventasEmp,
               decoration: InputDecoration(
                 hintText: "Ingrese el calculo de ventas sobre empleados",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -385,6 +415,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text("\nVENTAS / ACTIVOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.ventasActivos,
               decoration: InputDecoration(
                 hintText: "Ingrese el calculo de ventas sobre activos",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -400,6 +431,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: gStyle.getSubTitleTextStyle()),
             Text('\n6.1 LOCAL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.local,
               decoration: InputDecoration(
                 hintText: "Indique si la cobertura es de tipo local.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -412,6 +444,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n6.2 REGIONAL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.regional,
               decoration: InputDecoration(
                 hintText: "Indique si la cobertura es de tipo regional.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -424,6 +457,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n6.3 INTERNACIONAL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.internacional,
               decoration: InputDecoration(
                 hintText: "Indique si la cobertura es de tipo internacional.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -438,6 +472,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: gStyle.getSubTitleTextStyle()),
             Text('\n7.1 CORTO PLAZO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.cortoPlazo,
               decoration: InputDecoration(
                 hintText: "Ingrese la visión de la empresa a corto plazo.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -450,6 +485,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
             Text('\n7.2 LARGO PLAZO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
+              initialValue: empresa.largoPlazo,
               decoration: InputDecoration(
                 hintText: "Ingrese la visión de la empresa a largo plazo.",
                 enabledBorder: gStyle.getBorderSizeSentenceStyle(),
@@ -463,6 +499,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             Text('\n8. COMENTARIO EJECUTIVO:',
                 style: gStyle.getSubTitleTextStyle()),
             TextFormField(
+              initialValue: empresa.comentarioEjecutivo,
               decoration: InputDecoration(
                 hintText:
                     "Ingrese el comentario ejecutivo de antecedentes de la empresa.",
@@ -487,8 +524,14 @@ class MyCustomFormState extends State<MyCustomForm> {
                     Scaffold.of(context).showSnackBar(const SnackBar(
                         content: Text('Datos cargados correctamente')));
                   }
+
+                  if (empresa.id == null) {
+                    empresaProvider.crearEmpresa(empresa);
+                  } else {
+                    empresaProvider.editarEmpresa(empresa);
+                  }
                   formKey.currentState.save();
-                  empresaProvider.crearEncuestaEmpresa(empresa);
+                  Navigator.pushNamed(context, '/form');
                 },
                 label: Text(
                   'Submit',

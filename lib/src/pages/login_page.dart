@@ -91,7 +91,7 @@ class LoginPage extends StatelessWidget {
                 _crearBoton(bloc, context),
                 ElevatedButton(
                     onPressed: () =>
-                        Navigator.pushReplacementNamed(context, '/register'),
+                        Navigator.pushReplacementNamed(context, '/home'),
                     child: Text('Registrar'),
                     style: ElevatedButton.styleFrom(
                         primary: Color.fromRGBO(150, 202, 80, 1),

@@ -10,7 +10,7 @@ GeneralesModel generalesModelFromJson(String str) =>
 String generalesModelToJson(GeneralesModel data) => json.encode(data.toJson());
 
 class GeneralesModel {
-  // String id;
+  String id;
   String empNombre;
   String empDireccion;
   String empTelefono;
@@ -80,7 +80,7 @@ class GeneralesModel {
   String comentarioEjecutivo;
 
   GeneralesModel({
-    // this.id = '',
+    this.id,
     this.empNombre = '',
     this.empDireccion = '',
     this.empTelefono = '',
@@ -151,7 +151,7 @@ class GeneralesModel {
   });
 
   factory GeneralesModel.fromJson(Map<String, dynamic> json) => GeneralesModel(
-        // id: json["id"],
+        id: json["id"],
         empNombre: json["emp_nombre"],
         empDireccion: json["emp_direccion"],
         empTelefono: json["emp_telefono"],
@@ -222,7 +222,7 @@ class GeneralesModel {
       );
 
   Map<String, dynamic> toJson() => {
-        // "id": id,
+        "id": id,
         "emp_nombre": empNombre,
         "emp_direccion": empDireccion,
         "emp_telefono": empTelefono,

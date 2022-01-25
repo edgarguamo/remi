@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-double alturaSizedBox = 210;
+double alturaSizedBox = 226;
 double anchuraSizedBox = 350;
 final appbar_green = Colors.green[700];
 const padd = Padding(padding: EdgeInsets.all(15));

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:remi/src/models/empresa_model.dart';
+import 'package:remi/src/providers/empresa_provider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
 import 'package:remi/src/pages/home_page.dart';
 
@@ -12,6 +14,9 @@ class PropertiesPage extends StatefulWidget {
 
 class _PropertiesPageState extends State<PropertiesPage> {
   final List<String> empresas = ['Empresa A\n100%', 'Empresa B\n75%'];
+
+  final empresaProvider = new EmpresaProvider();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +32,8 @@ class _PropertiesPageState extends State<PropertiesPage> {
               onPressed: () {})
         ],
       ),
-      body: Column(
-        children: [
+      body: SingleChildScrollView(
+        child: Column(children: [
           Container(
             margin: const EdgeInsets.only(bottom: 50),
             height: 150,
@@ -97,47 +102,130 @@ class _PropertiesPageState extends State<PropertiesPage> {
               ],
             ),
           ),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                    width: anchuraSizedBox,
-                    height: alturaSizedBox,
-                    child: Card(
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0)),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Image.asset(
-                              'assets/images/unsplash_empresa.png',
-                              fit: BoxFit.fill,
-                            ),
-                            ElevatedButton.icon(
-                                onPressed: () {},
-                                icon: const Icon(Icons.add_business,
+          Column(
+            children: [
+              _crearListado(),
+              SizedBox(
+                  width: anchuraSizedBox,
+                  height: alturaSizedBox,
+                  child: Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Image.asset(
+                            'assets/images/unsplash_empresa.png',
+                            fit: BoxFit.fill,
+                          ),
+                          ElevatedButton.icon(
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/enterprise');
+                              },
+                              icon: const Icon(Icons.add_business,
+                                  color: Colors.black),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(15),
+                                          bottomRight: Radius.circular(15))),
+                                  minimumSize: const Size(350, 39)),
+                              label: const Text(
+                                "AÑADIR EMPRESA",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.black),
-                                style: ElevatedButton.styleFrom(
-                                    primary: Colors.white,
-                                    shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(15),
-                                            bottomRight: Radius.circular(15))),
-                                    minimumSize: const Size(350, 39)),
-                                label: const Text(
-                                  "AÑADIR EMPRESA",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                )),
-                          ],
-                        )))
-              ],
-            ),
-          )
-        ],
+                              )),
+                        ],
+                      )))
+            ],
+          ),
+        ]),
       ),
     );
+  }
+
+  Widget _crearListado() {
+    return FutureBuilder(
+        future: empresaProvider.cargarEmpresa(),
+        builder:
+            (BuildContext context, AsyncSnapshot<List<EmpresaModel>> snapshot) {
+          if (snapshot.hasData) {
+            final empresas = snapshot.data;
+            return ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: empresas.length,
+              itemBuilder: (context, i) => _crearCard(empresas[i]),
+            );
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        });
+  }
+
+  Widget _crearCard(EmpresaModel empresa) {
+    return SizedBox(
+        width: anchuraSizedBox,
+        height: alturaSizedBox,
+        child: Card(
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0)),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Image.asset(
+                  'assets/images/diagrama_barras_1.jpg',
+                  fit: BoxFit.fill,
+                ),
+                Text(
+                  empresa.nombre,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+                Row(children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/form',
+                            arguments: empresa);
+                        empresaProvider.borrarEmpresa(empresa.id);
+                        setState(() {});
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(15),
+                          )),
+                          minimumSize: const Size(175, 39)),
+                      child: Text(
+                        'Editar',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        empresaProvider.borrarEmpresa(empresa.id);
+                        setState(() {});
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(15))),
+                          minimumSize: const Size(175, 39)),
+                      child: Text(
+                        'Eliminar',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                      ))
+                ])
+              ],
+            )));
   }
 }
