@@ -3,7 +3,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:remi/src/models/empresa_model.dart';
@@ -20,7 +19,6 @@ class FormPage2 extends StatefulWidget {
 
 const padd = Padding(padding: EdgeInsets.all(30));
 final appbar_green = Colors.green[700];
-
 final empresaProvider = new EmpresaProvider();
 
 EmpresaModel empresa = new EmpresaModel();
@@ -533,7 +531,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                   } else {
                     empresaProvider.editarEmpresa(empresa);
                   }
-                  Navigator.pushNamed(context, '/prop');
+                  Navigator.pushNamed(context, '/form');
                 },
                 label: Text(
                   'Submit',

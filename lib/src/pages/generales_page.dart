@@ -19,8 +19,8 @@ class FormPage extends StatefulWidget {
 
 const padd = Padding(padding: EdgeInsets.all(30));
 final appbar_green = Colors.green[700];
-final formKey = GlobalKey<FormState>();
 final generalesProvider = new GeneralProvider();
+
 GeneralesModel generales = new GeneralesModel();
 
 class _FormPageState extends State<FormPage> {
@@ -28,6 +28,12 @@ class _FormPageState extends State<FormPage> {
 
   @override
   Widget build(BuildContext context) {
+    final GeneralesModel gen = ModalRoute.of(context).settings.arguments;
+
+    if (gen != null) {
+      generales = gen;
+    }
+
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
@@ -54,6 +60,7 @@ class MyCustomForm extends StatefulWidget {
 }
 
 class MyCustomFormState extends State<MyCustomForm> {
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -993,16 +1000,17 @@ class MyCustomFormState extends State<MyCustomForm> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  if (generales.id != null) {
-                    generalesProvider.crearEncuestaGeneral(generales);
-                  } else {
-                    generalesProvider.editarGenerales(generales);
-                  }
                   if (formKey.currentState.validate()) {
                     Scaffold.of(context).showSnackBar(const SnackBar(
                         content: Text('Datos cargados correctamente')));
                   }
+
                   formKey.currentState.save();
+                  if (generales.id == null) {
+                    generalesProvider.crearEncuestaGeneral(generales);
+                  } else {
+                    generalesProvider.editarGenerales(generales);
+                  }
                   Navigator.pushNamed(context, '/prop');
                 },
                 label: Text(

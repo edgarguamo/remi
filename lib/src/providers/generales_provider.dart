@@ -8,22 +8,20 @@ class GeneralProvider {
   final String _url =
       'https://bancayfinanzasflutter-default-rtdb.firebaseio.com/';
 
-  Future<bool> crearEncuestaGeneral(GeneralesModel generales) async {
-    final url = '{$_url}/generales.json';
-
-    final resp =
-        await http.post(Uri.parse(url), body: generalesModelToJson(generales));
-
-    final decodedData = json.decode(resp.body);
-
-    print(decodedData);
-    return true;
-  }
-
-  Future<bool> editarGenerales(GeneralesModel producto) async {
+  Future<bool> editarGenerales(GeneralesModel generales) async {
     final url = '$_url/generales/${generales.id}.json';
     final resp =
         await http.put(Uri.parse(url), body: generalesModelToJson(generales));
+    final decodedData = json.decode(resp.body);
+    print(decodedData);
+
+    return true;
+  }
+
+  Future<bool> crearEncuestaGeneral(GeneralesModel generales) async {
+    final url = '$_url/generales.json';
+    final resp =
+        await http.post(Uri.parse(url), body: generalesModelToJson(generales));
     final decodedData = json.decode(resp.body);
     print(decodedData);
 
