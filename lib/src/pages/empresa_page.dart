@@ -20,7 +20,7 @@ class FormPage2 extends StatefulWidget {
 
 const padd = Padding(padding: EdgeInsets.all(30));
 final appbar_green = Colors.green[700];
-final formKey = GlobalKey<FormState>();
+
 final empresaProvider = new EmpresaProvider();
 
 EmpresaModel empresa = new EmpresaModel();
@@ -31,6 +31,7 @@ class _FormPage2State extends State<FormPage2> {
   @override
   Widget build(BuildContext context) {
     final EmpresaModel prod = ModalRoute.of(context).settings.arguments;
+
     if (prod != null) {
       empresa = prod;
     }
@@ -67,6 +68,7 @@ class MyCustomForm extends StatefulWidget {
 }
 
 class MyCustomFormState extends State<MyCustomForm> {
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -525,13 +527,13 @@ class MyCustomFormState extends State<MyCustomForm> {
                         content: Text('Datos cargados correctamente')));
                   }
 
+                  formKey.currentState.save();
                   if (empresa.id == null) {
                     empresaProvider.crearEmpresa(empresa);
                   } else {
                     empresaProvider.editarEmpresa(empresa);
                   }
-                  formKey.currentState.save();
-                  Navigator.pushNamed(context, '/form');
+                  Navigator.pushNamed(context, '/prop');
                 },
                 label: Text(
                   'Submit',

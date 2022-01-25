@@ -121,8 +121,7 @@ class _PropertiesPageState extends State<PropertiesPage> {
                           ),
                           ElevatedButton.icon(
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, '/enterprise');
+                                Navigator.pushNamed(context, '/enterprise');
                               },
                               icon: const Icon(Icons.add_business,
                                   color: Colors.black),
@@ -191,10 +190,8 @@ class _PropertiesPageState extends State<PropertiesPage> {
                 Row(children: [
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/form',
+                        Navigator.pushNamed(context, '/enterprise',
                             arguments: empresa);
-                        empresaProvider.borrarEmpresa(empresa.id);
-                        setState(() {});
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,
@@ -210,8 +207,8 @@ class _PropertiesPageState extends State<PropertiesPage> {
                       )),
                   ElevatedButton(
                       onPressed: () {
-                        empresaProvider.borrarEmpresa(empresa.id);
                         setState(() {});
+                        empresaProvider.borrarEmpresa(empresa.id);
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,

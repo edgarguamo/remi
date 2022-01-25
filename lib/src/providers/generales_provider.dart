@@ -21,7 +21,7 @@ class GeneralProvider {
   }
 
   Future<bool> editarGenerales(GeneralesModel producto) async {
-    final url = '$_url/empresa/${generales.id}.json';
+    final url = '$_url/generales/${generales.id}.json';
     final resp =
         await http.put(Uri.parse(url), body: generalesModelToJson(generales));
     final decodedData = json.decode(resp.body);
