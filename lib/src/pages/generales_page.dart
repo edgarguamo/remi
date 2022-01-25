@@ -9,7 +9,7 @@ import 'package:remi/src/widget/navitation_drawer_widget.dart';
 import 'package:remi/src/utils/style.dart' as gStyle;
 
 class FormPage extends StatefulWidget {
-  const FormPage({Key? key, required String title}) : super(key: key);
+  const FormPage({Key key, String title}) : super(key: key);
 
   @override
   _FormPageState createState() => _FormPageState();
@@ -26,7 +26,7 @@ const enunciado = TextStyle(fontSize: 16, fontStyle: FontStyle.italic);
 final appbar_green = Colors.green[700];
 
 class _FormPageState extends State<FormPage> {
-  String? value;
+  String value;
 
   @override
   Widget build(BuildContext context) {
@@ -84,10 +84,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empNombre = value!;
+                generales.empNombre = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -101,10 +101,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empDireccion = value!;
+                generales.empDireccion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -118,10 +118,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empTelefono = int.parse(value!);
+                generales.empTelefono = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -143,10 +143,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empOriginario = value!;
+                generales.empOriginario = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -160,10 +160,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empLugar = value!;
+                generales.empLugar = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -177,10 +177,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empEdad = int.parse(value!);
+                generales.empEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -194,10 +194,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empEstado = value!;
+                generales.empEstado = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -211,10 +211,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empOcupacion = value!;
+                generales.empOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -228,10 +228,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empEscolaridad = value!;
+                generales.empEscolaridad = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -245,10 +245,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empSalud = value!;
+                generales.empSalud = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -262,10 +262,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.empComentarios = value!;
+                generales.empComentarios = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -283,10 +283,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreNombre = value!;
+                generales.padreNombre = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -300,10 +300,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreOriginario = value!;
+                generales.padreOriginario = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -317,10 +317,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreViven = value!;
+                generales.padreViven = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -334,10 +334,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreLugar = value!;
+                generales.padreLugar = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -351,10 +351,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreEdad = int.parse(value!);
+                generales.padreEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -368,10 +368,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreOcupacion = value!;
+                generales.padreOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -385,10 +385,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreEscolaridad = value!;
+                generales.padreEscolaridad = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -402,10 +402,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreSalud = value!;
+                generales.padreSalud = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -419,10 +419,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.padreComentarios = value!;
+                generales.padreComentarios = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -437,10 +437,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hermanos = int.parse(value!);
+                generales.hermanos = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -454,10 +454,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.herNombres = value!;
+                generales.herNombres = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -471,10 +471,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.herEdad = int.parse(value!);
+                generales.herEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -488,10 +488,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.herOcupacion = value!;
+                generales.herOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -506,10 +506,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.herLugar = value!;
+                generales.herLugar = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -525,10 +525,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parNombre = value!;
+                generales.parNombre = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -542,10 +542,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parOriginaria = value!;
+                generales.parOriginaria = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -559,10 +559,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parVive = value!;
+                generales.parVive = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -576,10 +576,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parLugar = value!;
+                generales.parLugar = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -593,10 +593,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parEdad = int.parse(value!);
+                generales.parEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -610,10 +610,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parSalud = value!;
+                generales.parSalud = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -627,10 +627,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parOcupacion = value!;
+                generales.parOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -644,10 +644,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parEscolaridad = value!;
+                generales.parEscolaridad = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -661,10 +661,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.parComentario = value!;
+                generales.parComentario = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -679,10 +679,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroNombre = value!;
+                generales.suegroNombre = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -696,10 +696,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroOriginarios = value!;
+                generales.suegroOriginarios = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -713,10 +713,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroViven = value!;
+                generales.suegroViven = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -730,10 +730,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroLugar = value!;
+                generales.suegroLugar = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -747,10 +747,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroEdad = int.parse(value!);
+                generales.suegroEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -764,10 +764,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroSalud = value!;
+                generales.suegroSalud = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -781,10 +781,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroOcupacion = value!;
+                generales.suegroOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -798,10 +798,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroEscolaridad = value!;
+                generales.suegroEscolaridad = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -815,10 +815,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.suegroComentario = value!;
+                generales.suegroComentario = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -833,10 +833,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.cuNombre = value!;
+                generales.cuNombre = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -850,10 +850,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.cuEdad = int.parse(value!);
+                generales.cuEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -867,10 +867,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.cuOcupacion = value!;
+                generales.cuOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -884,10 +884,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.cuLugar = value!;
+                generales.cuLugar = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -902,10 +902,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.mTiempo = int.parse(value!);
+                generales.mTiempo = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -920,10 +920,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.mSituacion = value!;
+                generales.mSituacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -938,10 +938,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hijosNumero = int.parse(value!);
+                generales.hijosNumero = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -955,10 +955,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hijosEdad = int.parse(value!);
+                generales.hijosEdad = int.parse(value);
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -972,10 +972,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hijosOcupacion = value!;
+                generales.hijosOcupacion = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -989,10 +989,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hijosEstado = value!;
+                generales.hijosEstado = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1006,10 +1006,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hijosEscolaridad = value!;
+                generales.hijosEscolaridad = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1023,10 +1023,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.hijosSalud = value!;
+                generales.hijosSalud = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1044,10 +1044,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.filoHobbies = value!;
+                generales.filoHobbies = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1061,10 +1061,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.filoComentarios = value!;
+                generales.filoComentarios = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1079,10 +1079,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.metasProfesionales = value!;
+                generales.metasProfesionales = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1096,10 +1096,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.metasAfectivas = value!;
+                generales.metasAfectivas = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1113,10 +1113,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.metasFisicas = value!;
+                generales.metasFisicas = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1130,10 +1130,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.metasComentarios = value!;
+                generales.metasComentarios = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1148,10 +1148,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.tiempoDia = value!;
+                generales.tiempoDia = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1165,10 +1165,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.tiempoSemana = value!;
+                generales.tiempoSemana = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1182,10 +1182,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.tiempoMes = value!;
+                generales.tiempoMes = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1199,10 +1199,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.tiempoAnio = value!;
+                generales.tiempoAnio = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1217,10 +1217,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.tiempoComentario = value!;
+                generales.tiempoComentario = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1235,10 +1235,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                generales.comentarioEjecutivo = value!;
+                generales.comentarioEjecutivo = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -1252,11 +1252,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  if (formKey.currentState!.validate()) {
+                  if (formKey.currentState.validate()) {
                     Scaffold.of(context).showSnackBar(const SnackBar(
                         content: Text('Datos cargados correctamente')));
                   }
-                  formKey.currentState!.save();
+                  formKey.currentState.save();
                   generalesProvider.crearEncuestaGeneral(generales);
                 },
                 label: const Text(

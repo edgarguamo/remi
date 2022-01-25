@@ -9,7 +9,7 @@ import 'package:remi/src/providers/usuario_provider.dart';
 class RegisterPage extends StatelessWidget {
   final usuarioProvider = new UsuarioProvider();
 
-  RegisterPage({Key? key}) : super(key: key);
+  RegisterPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class RegisterPage extends StatelessWidget {
                 SizedBox(
                   height: 2.0,
                 ),
-                _crearEmail(bloc!),
+                _crearEmail(bloc),
                 SizedBox(
                   height: 2.0,
                 ),

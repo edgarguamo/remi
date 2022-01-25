@@ -12,7 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:remi/src/utils/style.dart' as gStyle;
 
 class FormPage2 extends StatefulWidget {
-  FormPage2({Key? key, required String title}) : super(key: key);
+  FormPage2({Key key, String title}) : super(key: key);
 
   @override
   _FormPage2State createState() => _FormPage2State();
@@ -29,7 +29,7 @@ const enunciado = TextStyle(fontSize: 16, fontStyle: FontStyle.italic);
 final appbar_green = Colors.green[700];
 
 class _FormPage2State extends State<FormPage2> {
-  String? value;
+  String value;
 
   @override
   Widget build(BuildContext context) {
@@ -97,10 +97,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.nombre = value!;
+                empresa.nombre = value;
               },
               validator: (value) {
-                if (value!.isEmpty) {
+                if (value.isEmpty) {
                   return 'Enter text';
                 }
               },
@@ -114,7 +114,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.direccion = value!;
+                empresa.direccion = value;
               },
             ),
             Text('\n1.3 TELÉFONO:', style: gStyle.getSentenceTextStyle()),
@@ -127,7 +127,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.contacto = value!;
+                empresa.contacto = value;
               },
             ),
             Text('\n1.4 R.F.C:', style: gStyle.getSentenceTextStyle()),
@@ -139,7 +139,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.rfc = value!;
+                empresa.rfc = value;
               },
             ),
             Text('\n1.5 DOMICILIO FISCAL:',
@@ -152,7 +152,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.fiscal = value!;
+                empresa.fiscal = value;
               },
             ),
             Text(
@@ -167,7 +167,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.antiguedad = value!;
+                empresa.antiguedad = value;
               },
             ),
             Text("\n3. ESTATUS LEGAL DE LA EMPRESA",
@@ -182,7 +182,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.estatus = value!;
+                empresa.estatus = value;
               },
             ),
             Text("\n3.2 PERSONAL MORAL", style: gStyle.getSentenceTextStyle()),
@@ -195,7 +195,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.moral = value!;
+                empresa.moral = value;
               },
             ),
             Text("\n3.3 NO REGISTRADA", style: gStyle.getSentenceTextStyle()),
@@ -208,7 +208,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.noRegistrada = value!;
+                empresa.noRegistrada = value;
               },
             ),
             Text("\n4. ESTATUS FISCAL", style: gStyle.getSubTitleTextStyle()),
@@ -220,7 +220,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.fiscal = value!;
+                empresa.fiscal = value;
               },
             ),
             Text(
@@ -240,7 +240,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.empleados = value!;
+                empresa.empleados = value;
               },
             ),
             Text("\nADMINISTRATIVOS", style: gStyle.getSentenceTextStyle()),
@@ -254,7 +254,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.administrativos = value!;
+                empresa.administrativos = value;
               },
             ),
             Text("\nOTROS", style: gStyle.getSentenceTextStyle()),
@@ -267,7 +267,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.otros = value!;
+                empresa.otros = value;
               },
             ),
             Text("\nTOTAL", style: gStyle.getSentenceTextStyle()),
@@ -280,7 +280,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.total = value!;
+                empresa.total = value;
               },
             ),
             Text("\nCOMENTARIOS", style: gStyle.getSentenceTextStyle()),
@@ -292,7 +292,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.comentarios = value!;
+                empresa.comentarios = value;
               },
             ),
             Text('\n5.2 VENTAS:', style: gStyle.getSentenceTextStyle()),
@@ -306,7 +306,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.diarias = value!;
+                empresa.diarias = value;
               },
             ),
             Text("\nSEMANALES", style: gStyle.getSentenceTextStyle()),
@@ -319,7 +319,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.semanales = value!;
+                empresa.semanales = value;
               },
             ),
             Text("\nMENSUALES", style: gStyle.getSentenceTextStyle()),
@@ -332,7 +332,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.mensuales = value!;
+                empresa.mensuales = value;
               },
             ),
             Text('\n5.3 VALOR DE LOS ACTIVOS:',
@@ -347,7 +347,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.terreno = value!;
+                empresa.terreno = value;
               },
             ),
             Text("\nBIENES", style: gStyle.getSentenceTextStyle()),
@@ -360,7 +360,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.bienes = value!;
+                empresa.bienes = value;
               },
             ),
             Text("\nOTROS", style: gStyle.getSentenceTextStyle()),
@@ -373,7 +373,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.otros = value!;
+                empresa.otros = value;
               },
             ),
             Text('\n5.4 CÁLCULOS', style: gStyle.getSentenceTextStyle()),
@@ -387,7 +387,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.ventasEmp = value!;
+                empresa.ventasEmp = value;
               },
             ),
             Text("\nVENTAS / ACTIVOS", style: gStyle.getSentenceTextStyle()),
@@ -400,7 +400,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
-                empresa.ventasActivos = value!;
+                empresa.ventasActivos = value;
               },
             ),
             Text("\n6. COBERTURA DE MERCADO DE LA EMPRESA",
@@ -414,7 +414,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.local = value!;
+                empresa.local = value;
               },
             ),
             Text('\n6.2 REGIONAL:', style: gStyle.getSentenceTextStyle()),
@@ -426,7 +426,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.regional = value!;
+                empresa.regional = value;
               },
             ),
             Text('\n6.3 INTERNACIONAL:', style: gStyle.getSentenceTextStyle()),
@@ -438,7 +438,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.internacional = value!;
+                empresa.internacional = value;
               },
             ),
             Text("\n7. VISIÓN DE LA EMPRESA",
@@ -452,7 +452,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.cortoPlazo = value!;
+                empresa.cortoPlazo = value;
               },
             ),
             Text('\n7.2 LARGO PLAZO:', style: gStyle.getSentenceTextStyle()),
@@ -464,7 +464,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.largoPlazo = value!;
+                empresa.largoPlazo = value;
               },
             ),
             Text('\n8. COMENTARIO EJECUTIVO:',
@@ -478,7 +478,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
-                empresa.comentarioEjecutivo = value!;
+                empresa.comentarioEjecutivo = value;
               },
             ),
             Padding(
@@ -490,11 +490,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  if (formKey.currentState!.validate()) {
+                  if (formKey.currentState.validate()) {
                     Scaffold.of(context).showSnackBar(const SnackBar(
                         content: Text('Datos cargados correctamente')));
                   }
-                  formKey.currentState!.save();
+                  formKey.currentState.save();
                   empresaProvider.crearEncuestaEmpresa(empresa);
                 },
                 label: Text(

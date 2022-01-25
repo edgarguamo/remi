@@ -53,9 +53,9 @@ class NavigationDrawerWidget extends StatelessWidget {
 }
 
 Widget buildMenuItem({
-  required String text,
-  required IconData icon,
-  VoidCallback? onClicked,
+  String text,
+  IconData icon,
+  VoidCallback onClicked,
 }) {
   final color = Colors.black;
 

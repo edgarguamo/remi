@@ -20,7 +20,7 @@ class PreferenciasUsuario {
 
   PreferenciasUsuario._internal();
 
-  late SharedPreferences _prefs;
+  SharedPreferences _prefs;
 
   initPrefs() async {
     _prefs = await SharedPreferences.getInstance();

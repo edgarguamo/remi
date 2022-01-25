@@ -9,7 +9,7 @@ import 'package:remi/src/utils/utils.dart';
 
 class LoginPage extends StatelessWidget {
   final usuarioProvider = new UsuarioProvider();
-  LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: 5.0,
                 ),
-                _crearEmail(bloc!),
+                _crearEmail(bloc),
                 SizedBox(
                   height: 5.0,
                 ),

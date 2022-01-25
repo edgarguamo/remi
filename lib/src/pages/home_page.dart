@@ -3,7 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key, required String title}) : super(key: key);
+  HomePage({Key key, String title}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();

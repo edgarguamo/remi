@@ -4,7 +4,7 @@ import 'package:remi/src/widget/navitation_drawer_widget.dart';
 import 'package:remi/src/pages/home_page.dart';
 
 class PropertiesPage extends StatefulWidget {
-  PropertiesPage({Key? key, required String title}) : super(key: key);
+  PropertiesPage({Key key, String title}) : super(key: key);
 
   @override
   _PropertiesPageState createState() => _PropertiesPageState();
