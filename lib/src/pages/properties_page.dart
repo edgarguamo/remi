@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
+import 'package:remi/src/pages/home_page.dart';
 
 class PropertiesPage extends StatefulWidget {
   PropertiesPage({Key? key, required String title}) : super(key: key);
@@ -10,7 +11,6 @@ class PropertiesPage extends StatefulWidget {
 }
 
 class _PropertiesPageState extends State<PropertiesPage> {
-  final appbar_green = Colors.green[700];
   final List<String> empresas = ['Empresa A\n100%', 'Empresa B\n75%'];
   @override
   Widget build(BuildContext context) {
@@ -97,6 +97,45 @@ class _PropertiesPageState extends State<PropertiesPage> {
               ],
             ),
           ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                    width: anchuraSizedBox,
+                    height: alturaSizedBox,
+                    child: Card(
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/images/unsplash_empresa.png',
+                              fit: BoxFit.fill,
+                            ),
+                            ElevatedButton.icon(
+                                onPressed: () {},
+                                icon: const Icon(Icons.add_business,
+                                    color: Colors.black),
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.white,
+                                    shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(15),
+                                            bottomRight: Radius.circular(15))),
+                                    minimumSize: const Size(350, 39)),
+                                label: const Text(
+                                  "AÑADIR EMPRESA",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                )),
+                          ],
+                        )))
+              ],
+            ),
+          )
         ],
       ),
     );

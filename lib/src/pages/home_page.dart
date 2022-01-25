@@ -9,10 +9,12 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-const padd = Padding(padding: EdgeInsets.all(30));
+double alturaSizedBox = 210;
+double anchuraSizedBox = 350;
+final appbar_green = Colors.green[700];
+const padd = Padding(padding: EdgeInsets.all(15));
 
 class _HomePageState extends State<HomePage> {
-  final appbar_green = Colors.green[700];
   final List<String> novedades = [
     'La empresa de soluciones alimentarias ILE ha generado ganancias de 10,000 dolares',
     'La empresa de soluciones alimentarias ILE ha generado ganancias de 20,000 dolares'
@@ -108,8 +110,8 @@ class _HomePageState extends State<HomePage> {
             ),
             padd,
             SizedBox(
-                width: 350,
-                height: 230,
+                width: anchuraSizedBox,
+                height: alturaSizedBox,
                 child: Card(
                     elevation: 0,
                     shape: RoundedRectangleBorder(
@@ -134,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(15),
                                         bottomRight: Radius.circular(15))),
-                                minimumSize: const Size(350, 40)),
+                                minimumSize: const Size(350, 39)),
                             child: const Text(
                               "DETALLES",
                               style: TextStyle(
@@ -145,8 +147,8 @@ class _HomePageState extends State<HomePage> {
                     ))),
             padd,
             SizedBox(
-                width: 350,
-                height: 230,
+                width: anchuraSizedBox,
+                height: alturaSizedBox,
                 child: Card(
                     elevation: 0,
                     shape: RoundedRectangleBorder(
@@ -171,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(15),
                                         bottomRight: Radius.circular(15))),
-                                minimumSize: const Size(350, 40)),
+                                minimumSize: const Size(350, 39)),
                             child: const Text(
                               "DETALLES",
                               style: TextStyle(
