@@ -105,260 +105,378 @@ class MyCustomFormState extends State<MyCustomForm> {
                 }
               },
             ),
-            const Text('\n1.2 DIRECCIÓN:', style: title2),
+            Text('\n1.2 DIRECCIÓN:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration:
-                  const InputDecoration(hintText: "Ingrese la dirección."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la dirección.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.direccion = value!;
               },
             ),
-            const Text('\n1.3 TELÉFONO:', style: title2),
+            Text('\n1.3 TELÉFONO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration:
-                  const InputDecoration(hintText: "Ingrese el teléfono."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el teléfono.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.contacto = value!;
               },
             ),
-            const Text('\n1.4 R.F.C:', style: title2),
+            Text('\n1.4 R.F.C:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(hintText: "Ingrese el R.F.C."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el R.F.C.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.rfc = value!;
               },
             ),
-            const Text('\n1.5 DOMICILIO FISCAL:', style: title2),
+            Text('\n1.5 DOMICILIO FISCAL:',
+                style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el domicilio fiscal."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el domicilio fiscal.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.fiscal = value!;
               },
             ),
-            const Text(
+            Text(
               '\n2. ANTIGÜEDAD DE LA EMPRESA',
-              style: title1,
+              style: gStyle.getSubTitleTextStyle(),
             ),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el tiempo de antigüedad de la empresa."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el tiempo de antigüedad de la empresa.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.antiguedad = value!;
               },
             ),
-            const Text("\n3. ESTATUS LEGAL DE LA EMPRESA", style: title1),
-            const Text("\n3.1 PERSONA FÍSICA", style: title2),
+            Text("\n3. ESTATUS LEGAL DE LA EMPRESA",
+                style: gStyle.getSubTitleTextStyle()),
+            Text("\n3.1 PERSONA FÍSICA", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Indique si el estatus legal de la empresa corresponde a una persona física."),
+              decoration: InputDecoration(
+                hintText:
+                    "Indique si el estatus legal de la empresa corresponde a una persona física.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.estatus = value!;
               },
             ),
-            const Text("\n3.2 PERSONAL MORAL", style: title2),
+            Text("\n3.2 PERSONAL MORAL", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Indique si el estatus legal de la empresa corresponde a una persona moral."),
+              decoration: InputDecoration(
+                hintText:
+                    "Indique si el estatus legal de la empresa corresponde a una persona moral.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.moral = value!;
               },
             ),
-            const Text("\n3.3 NO REGISTRADA", style: title2),
+            Text("\n3.3 NO REGISTRADA", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Indique si el estatus legal de la empresa no se encuentra registrado."),
+              decoration: InputDecoration(
+                hintText:
+                    "Indique si el estatus legal de la empresa no se encuentra registrado.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.noRegistrada = value!;
               },
             ),
-            const Text("\n4. ESTATUS FISCAL", style: title1),
+            Text("\n4. ESTATUS FISCAL", style: gStyle.getSubTitleTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el estatus fiscal de la empresa."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el estatus fiscal de la empresa.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.fiscal = value!;
               },
             ),
-            const Text(
+            Text(
               "\n5. TAMAÑO DE LA EMPRESA",
-              style: title1,
+              style: gStyle.getSubTitleTextStyle(),
             ),
-            const Text('\n5.1 NÚMERO DE EMPLEADOS:', style: title2),
-            const Text("\nOPERATIVOS", style: enunciado),
+            Text('\n5.1 NÚMERO DE EMPLEADOS:',
+                style: gStyle.getSentenceTextStyle()),
+            Text("\nOPERATIVOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Ingrese la cantidad de empleados de tipo operativos."),
+              decoration: InputDecoration(
+                hintText:
+                    "Ingrese la cantidad de empleados de tipo operativos.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.empleados = value!;
               },
             ),
-            const Text("\nADMINISTRATIVOS", style: enunciado),
+            Text("\nADMINISTRATIVOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Ingrese la cantidad de empleados de tipo administrativos."),
+              decoration: InputDecoration(
+                hintText:
+                    "Ingrese la cantidad de empleados de tipo administrativos.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.administrativos = value!;
               },
             ),
-            const Text("\nOTROS", style: enunciado),
+            Text("\nOTROS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese la cantidad de empleados de otro tipo."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la cantidad de empleados de otro tipo.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.otros = value!;
               },
             ),
-            const Text("\nTOTAL", style: enunciado),
+            Text("\nTOTAL", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el total de empleados."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el total de empleados.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.total = value!;
               },
             ),
-            const Text("\nCOMENTARIOS", style: enunciado),
+            Text("\nCOMENTARIOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el comentario sobre los empleados."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el comentario sobre los empleados.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.comentarios = value!;
               },
             ),
-            const Text('\n5.2 VENTAS:', style: title2),
-            const Text("\nDIARIAS", style: enunciado),
+            Text('\n5.2 VENTAS:', style: gStyle.getSentenceTextStyle()),
+            Text("\nDIARIAS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese la cantidad de ventas diarias."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la cantidad de ventas diarias.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.diarias = value!;
               },
             ),
-            const Text("\nSEMANALES", style: enunciado),
+            Text("\nSEMANALES", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese la cantidad de ventas semanales."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la cantidad de ventas semanales.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.semanales = value!;
               },
             ),
-            const Text("\nMENSUALES", style: enunciado),
+            Text("\nMENSUALES", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese la cantidad de ventas mensuales."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la cantidad de ventas mensuales.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.mensuales = value!;
               },
             ),
-            const Text('\n5.3 VALOR DE LOS ACTIVOS:', style: title2),
-            const Text("\nTERRENO", style: enunciado),
+            Text('\n5.3 VALOR DE LOS ACTIVOS:',
+                style: gStyle.getSentenceTextStyle()),
+            Text("\nTERRENO", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el valor de los terrenos."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el valor de los terrenos.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.terreno = value!;
               },
             ),
-            const Text("\nBIENES", style: enunciado),
+            Text("\nBIENES", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el valor de los bienes."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el valor de los bienes.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.bienes = value!;
               },
             ),
-            const Text("\nOTROS", style: enunciado),
+            Text("\nOTROS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el valor de otros tipos."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el valor de otros tipos.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.otros = value!;
               },
             ),
-            const Text('\n5.4 CÁLCULOS', style: title2),
-            const Text("\nVENTAS / EMPLEADOS", style: enunciado),
+            Text('\n5.4 CÁLCULOS', style: gStyle.getSentenceTextStyle()),
+            Text("\nVENTAS / EMPLEADOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el calculo de ventas sobre empleados"),
+              decoration: InputDecoration(
+                hintText: "Ingrese el calculo de ventas sobre empleados",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.ventasEmp = value!;
               },
             ),
-            const Text("\nVENTAS / ACTIVOS", style: enunciado),
+            Text("\nVENTAS / ACTIVOS", style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese el calculo de ventas sobre activos"),
+              decoration: InputDecoration(
+                hintText: "Ingrese el calculo de ventas sobre activos",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               keyboardType: TextInputType.number,
               onSaved: (value) {
                 empresa.ventasActivos = value!;
               },
             ),
-            const Text("\n6. COBERTURA DE MERCADO DE LA EMPRESA",
-                style: title1),
-            const Text('\n6.1 LOCAL:', style: title2),
+            Text("\n6. COBERTURA DE MERCADO DE LA EMPRESA",
+                style: gStyle.getSubTitleTextStyle()),
+            Text('\n6.1 LOCAL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Indique si la cobertura es de tipo local."),
+              decoration: InputDecoration(
+                hintText: "Indique si la cobertura es de tipo local.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.local = value!;
               },
             ),
-            const Text('\n6.2 REGIONAL:', style: title2),
+            Text('\n6.2 REGIONAL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Indique si la cobertura es de tipo regional."),
+              decoration: InputDecoration(
+                hintText: "Indique si la cobertura es de tipo regional.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.regional = value!;
               },
             ),
-            const Text('\n6.3 INTERNACIONAL:', style: title2),
+            Text('\n6.3 INTERNACIONAL:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Indique si la cobertura es de tipo internacional."),
+              decoration: InputDecoration(
+                hintText: "Indique si la cobertura es de tipo internacional.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.internacional = value!;
               },
             ),
-            const Text("\n7. VISIÓN DE LA EMPRESA", style: title1),
-            const Text('\n7.1 CORTO PLAZO:', style: title2),
+            Text("\n7. VISIÓN DE LA EMPRESA",
+                style: gStyle.getSubTitleTextStyle()),
+            Text('\n7.1 CORTO PLAZO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese la visión de la empresa a corto plazo."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la visión de la empresa a corto plazo.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.cortoPlazo = value!;
               },
             ),
-            const Text('\n7.2 LARGO PLAZO:', style: title2),
+            Text('\n7.2 LARGO PLAZO:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "Ingrese la visión de la empresa a largo plazo."),
+              decoration: InputDecoration(
+                hintText: "Ingrese la visión de la empresa a largo plazo.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.largoPlazo = value!;
               },
             ),
-            const Text('\n8. COMENTARIO EJECUTIVO:', style: title1),
+            Text('\n8. COMENTARIO EJECUTIVO:',
+                style: gStyle.getSubTitleTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(
-                  hintText:
-                      "Ingrese el comentario ejecutivo de antecedentes de la empresa."),
+              decoration: InputDecoration(
+                hintText:
+                    "Ingrese el comentario ejecutivo de antecedentes de la empresa.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.comentarioEjecutivo = value!;
               },
@@ -379,7 +497,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                   formKey.currentState!.save();
                   empresaProvider.crearEncuestaEmpresa(empresa);
                 },
-                label: const Text(
+                label: Text(
                   'Submit',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
