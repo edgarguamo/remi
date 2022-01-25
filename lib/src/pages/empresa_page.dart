@@ -3,11 +3,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:remi/src/models/empresa_model.dart';
 import 'package:remi/src/providers/empresa_provider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
-import '';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:remi/src/utils/style.dart' as gStyle;
 
 class FormPage2 extends StatefulWidget {
   FormPage2({Key? key, required String title}) : super(key: key);
@@ -34,7 +36,11 @@ class _FormPage2State extends State<FormPage2> {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: const Center(child: Text('REMI')),
+        title: Center(
+            child: Text(
+          'REMI',
+          style: GoogleFonts.graduate(),
+        )),
         backgroundColor: appbar_green,
         elevation: 0,
         actions: <Widget>[
@@ -44,7 +50,9 @@ class _FormPage2State extends State<FormPage2> {
               onPressed: () {})
         ],
       ),
-      body: MyCustomForm(),
+      body: Container(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+          child: MyCustomForm()),
     );
   }
 }
@@ -68,17 +76,26 @@ class MyCustomFormState extends State<MyCustomForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Center(
-                child: Text('ANTECEDENTES DE LA EMPRESA\n',
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
-            const Text(
-              '1. GENERALES DE LA EMPRESA\n',
-              style: title1,
+            SizedBox(
+              height: 20,
             ),
-            const Text('1.1 NOMBRE:', style: title2),
+            Text(
+              'ANTECEDENTES DE LA EMPRESA\n',
+              style: gStyle.getTytleTextStyle(),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              '1. GENERALES DE LA EMPRESA\n',
+              style: gStyle.getSubTitleTextStyle(),
+            ),
+            Text('1.1 NOMBRE:', style: gStyle.getSentenceTextStyle()),
             TextFormField(
-              decoration: const InputDecoration(hintText: "Ingrese el nombre."),
+              decoration: InputDecoration(
+                hintText: "Ingrese el nombre.",
+                enabledBorder: gStyle.getBorderSizeSentenceStyle(),
+                focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+              ),
+              style: gStyle.getSentenceTextStyle(),
               onSaved: (value) {
                 empresa.nombre = value!;
               },
