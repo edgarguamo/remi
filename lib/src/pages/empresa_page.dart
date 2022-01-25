@@ -8,7 +8,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:remi/src/models/empresa_model.dart';
 import 'package:remi/src/providers/empresa_provider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:remi/src/utils/style.dart' as gStyle;
 
 class FormPage2 extends StatefulWidget {
@@ -19,13 +18,6 @@ class FormPage2 extends StatefulWidget {
 }
 
 const padd = Padding(padding: EdgeInsets.all(30));
-const title1 = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
-    decoration: TextDecoration.underline);
-
-const title2 = TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
-const enunciado = TextStyle(fontSize: 16, fontStyle: FontStyle.italic);
 final appbar_green = Colors.green[700];
 
 class _FormPage2State extends State<FormPage2> {
@@ -79,10 +71,11 @@ class MyCustomFormState extends State<MyCustomForm> {
             SizedBox(
               height: 20,
             ),
-            Text(
-              'ANTECEDENTES DE LA EMPRESA\n',
-              style: gStyle.getTytleTextStyle(),
-              textAlign: TextAlign.center,
+            Center(
+              child: Text(
+                'ANTECEDENTES DE LA EMPRESA\n',
+                style: gStyle.getTytleTextStyle(),
+              ),
             ),
             Text(
               '1. GENERALES DE LA EMPRESA\n',

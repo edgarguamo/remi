@@ -13,10 +13,10 @@ class GeneralesModel {
   // String id;
   String empNombre;
   String empDireccion;
-  int empTelefono;
+  String empTelefono;
   String empOriginario;
   String empLugar;
-  int empEdad;
+  String empEdad;
   String empEstado;
   String empOcupacion;
   String empEscolaridad;
@@ -26,21 +26,21 @@ class GeneralesModel {
   String padreOriginario;
   String padreViven;
   String padreLugar;
-  int padreEdad;
+  String padreEdad;
   String padreOcupacion;
   String padreEscolaridad;
   String padreSalud;
   String padreComentarios;
-  int hermanos;
+  String hermanos;
   String herNombres;
-  int herEdad;
+  String herEdad;
   String herOcupacion;
   String herLugar;
   String parNombre;
   String parOriginaria;
   String parVive;
   String parLugar;
-  int parEdad;
+  String parEdad;
   String parSalud;
   String parOcupacion;
   String parEscolaridad;
@@ -49,19 +49,19 @@ class GeneralesModel {
   String suegroOriginarios;
   String suegroViven;
   String suegroLugar;
-  int suegroEdad;
+  String suegroEdad;
   String suegroSalud;
   String suegroOcupacion;
   String suegroEscolaridad;
   String suegroComentario;
   String cuNombre;
-  int cuEdad;
+  String cuEdad;
   String cuOcupacion;
   String cuLugar;
-  int mTiempo;
+  String mTiempo;
   String mSituacion;
-  int hijosNumero;
-  int hijosEdad;
+  String hijosNumero;
+  String hijosEdad;
   String hijosOcupacion;
   String hijosEstado;
   String hijosEscolaridad;
@@ -83,10 +83,10 @@ class GeneralesModel {
     // this.id = '',
     this.empNombre = '',
     this.empDireccion = '',
-    this.empTelefono = 0,
+    this.empTelefono = '',
     this.empOriginario = '',
     this.empLugar = '',
-    this.empEdad = 0,
+    this.empEdad = '',
     this.empEstado = '',
     this.empOcupacion = '',
     this.empEscolaridad = '',
@@ -96,21 +96,21 @@ class GeneralesModel {
     this.padreOriginario = '',
     this.padreViven = '',
     this.padreLugar = '',
-    this.padreEdad = 0,
+    this.padreEdad = '',
     this.padreOcupacion = '',
     this.padreEscolaridad = '',
     this.padreSalud = '',
     this.padreComentarios = '',
-    this.hermanos = 0,
+    this.hermanos = '',
     this.herNombres = '',
-    this.herEdad = 0,
+    this.herEdad = '',
     this.herOcupacion = '',
     this.herLugar = '',
     this.parNombre = '',
     this.parOriginaria = '',
     this.parVive = '',
     this.parLugar = '',
-    this.parEdad = 0,
+    this.parEdad = '',
     this.parSalud = '',
     this.parOcupacion = '',
     this.parEscolaridad = '',
@@ -119,19 +119,19 @@ class GeneralesModel {
     this.suegroOriginarios = '',
     this.suegroViven = '',
     this.suegroLugar = '',
-    this.suegroEdad = 0,
+    this.suegroEdad = '',
     this.suegroSalud = '',
     this.suegroOcupacion = '',
     this.suegroEscolaridad = '',
     this.suegroComentario = '',
     this.cuNombre = '',
-    this.cuEdad = 0,
+    this.cuEdad = '',
     this.cuOcupacion = '',
     this.cuLugar = '',
-    this.mTiempo = 0,
+    this.mTiempo = '',
     this.mSituacion = '',
-    this.hijosNumero = 0,
-    this.hijosEdad = 0,
+    this.hijosNumero = '',
+    this.hijosEdad = '',
     this.hijosOcupacion = '',
     this.hijosEstado = '',
     this.hijosEscolaridad = '',
