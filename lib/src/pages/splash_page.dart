@@ -23,7 +23,16 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       body: Center(
           child: Container(
-        child: Text('Splash Art'),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.7), BlendMode.dstATop),
+              image: const AssetImage('assets/background_login.jpg'),
+              fit: BoxFit.cover),
+        ),
+        child: Image.asset('assets/logo.png'),
       )),
     );
   }
