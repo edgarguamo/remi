@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:remi/src/models/empresa_model.dart';
+import 'package:remi/src/models/generales_model.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/providers/empresa_provider.dart';
 import 'package:remi/src/utils/style.dart' as gStyle;
@@ -25,10 +26,10 @@ class _FormPage2State extends State<FormPage2> {
 
   @override
   Widget build(BuildContext context) {
-    final EmpresaModel prod = ModalRoute.of(context).settings.arguments;
+    final List<dynamic> prod = ModalRoute.of(context).settings.arguments;
 
     if (prod != null) {
-      empresa = prod;
+      empresa = prod[0];
     }
 
     return Scaffold(
@@ -572,8 +573,12 @@ class _FormPage2State extends State<FormPage2> {
     mostrarSnackbar('Información guardada');
 
     Navigator.pop(context);
-
-    Navigator.pushNamed(context, '/form');
+    final List<dynamic> prod = ModalRoute.of(context).settings.arguments;
+    if (prod == null) {
+      Navigator.pushNamed(context, '/form');
+    } else {
+      Navigator.pushNamed(context, '/form', arguments: prod[1]);
+    }
   }
 
   void mostrarSnackbar(String mensaje) {

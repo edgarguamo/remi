@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/models/empresa_model.dart';
+import 'package:remi/src/models/generales_model.dart';
 import 'package:remi/src/providers/empresa_provider.dart';
+import 'package:remi/src/providers/generales_provider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
 import 'package:remi/src/pages/home_page.dart';
 
@@ -14,6 +16,7 @@ class PropertiesPage extends StatefulWidget {
 
 class _PropertiesPageState extends State<PropertiesPage> {
   final empresaProvider = new EmpresaProvider();
+  final generalProvider = new GeneralProvider();
 
   @override
   Widget build(BuildContext context) {
@@ -146,17 +149,20 @@ class _PropertiesPageState extends State<PropertiesPage> {
   }
 
   Widget _crearListado() {
+    Future<List<EmpresaModel>> bar = empresaProvider.cargarEmpresa();
+    Future<List<GeneralesModel>> foo = generalProvider.cargarGenerales();
     return FutureBuilder(
-        future: empresaProvider.cargarEmpresa(),
-        builder:
-            (BuildContext context, AsyncSnapshot<List<EmpresaModel>> snapshot) {
+        future: Future.wait([bar, foo]),
+        builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
           if (snapshot.hasData) {
-            final empresas = snapshot.data;
+            final empresas = snapshot.data[0];
+            final generales = snapshot.data[1];
             return ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: empresas.length,
-              itemBuilder: (context, i) => _crearCard(empresas[i]),
+              itemBuilder: (context, i) =>
+                  _crearCard(empresas[i], generales[i]),
             );
           } else {
             return Center(
@@ -166,7 +172,7 @@ class _PropertiesPageState extends State<PropertiesPage> {
         });
   }
 
-  Widget _crearCard(EmpresaModel empresa) {
+  Widget _crearCard(EmpresaModel empresa, GeneralesModel general) {
     return SizedBox(
         width: anchuraSizedBox,
         height: alturaSizedBox,
@@ -189,7 +195,7 @@ class _PropertiesPageState extends State<PropertiesPage> {
                   ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/enterprise',
-                            arguments: empresa);
+                            arguments: [empresa, general]);
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,

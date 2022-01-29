@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:remi/src/models/generales_model.dart';
-import 'package:remi/src/pages/generales_page.dart';
 
 class GeneralProvider {
   final String _url =
@@ -18,7 +17,7 @@ class GeneralProvider {
     return true;
   }
 
-  Future<bool> crearEncuestaGeneral(GeneralesModel generales) async {
+  Future<bool> crearGeneral(GeneralesModel generales) async {
     final url = '$_url/generales.json';
     final resp =
         await http.post(Uri.parse(url), body: generalesModelToJson(generales));
@@ -37,8 +36,8 @@ class GeneralProvider {
 
     if (decodedData == null) return [];
 
-    decodedData.forEach((id, generales) {
-      final prodTemp = GeneralesModel.fromJson(generales);
+    decodedData.forEach((id, general) {
+      final prodTemp = GeneralesModel.fromJson(general);
       prodTemp.id = id;
       generales.add(prodTemp);
     });

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:remi/src/models/empresa_model.dart';
-import 'package:remi/src/pages/empresa_page.dart';
 
 class EmpresaProvider {
   final String _url =

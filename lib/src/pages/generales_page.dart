@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remi/src/models/empresa_model.dart';
 
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/models/generales_model.dart';
@@ -26,7 +27,6 @@ class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
     final GeneralesModel gen = ModalRoute.of(context).settings.arguments;
-
     if (gen != null) {
       generales = gen;
     }
@@ -1008,7 +1008,7 @@ class _FormPageState extends State<FormPage> {
     formGen.currentState.save();
 
     if (generales.id == null) {
-      generalProvider.crearEncuestaGeneral(generales);
+      generalProvider.crearGeneral(generales);
     } else {
       generalProvider.editarGenerales(generales);
     }
