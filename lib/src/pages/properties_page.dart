@@ -13,8 +13,6 @@ class PropertiesPage extends StatefulWidget {
 }
 
 class _PropertiesPageState extends State<PropertiesPage> {
-  final List<String> empresas = ['Empresa A\n100%', 'Empresa B\n75%'];
-
   final empresaProvider = new EmpresaProvider();
 
   @override

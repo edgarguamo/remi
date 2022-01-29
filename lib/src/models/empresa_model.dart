@@ -10,6 +10,37 @@ EmpresaModel empresaModelFromJson(String str) =>
 String empresaModelToJson(EmpresaModel data) => json.encode(data.toJson());
 
 class EmpresaModel {
+  String id;
+  String nombre;
+  String direccion;
+  String contacto;
+  String rfc;
+  String domicilio;
+  String antiguedad;
+  String estatus;
+  String moral;
+  String noRegistrada;
+  String fiscal;
+  String empleados;
+  String administrativos;
+  String otros;
+  String total;
+  String comentarios;
+  String diarias;
+  String semanales;
+  String mensuales;
+  String terreno;
+  String bienes;
+  String aquellos;
+  String ventasEmp;
+  String ventasActivos;
+  String local;
+  String regional;
+  String internacional;
+  String cortoPlazo;
+  String largoPlazo;
+  String comentarioEjecutivo;
+
   EmpresaModel({
     this.id,
     this.nombre = '',
@@ -42,37 +73,6 @@ class EmpresaModel {
     this.largoPlazo = '',
     this.comentarioEjecutivo = '',
   });
-
-  String id;
-  String nombre;
-  String direccion;
-  String contacto;
-  String rfc;
-  String domicilio;
-  String antiguedad;
-  String estatus;
-  String moral;
-  String noRegistrada;
-  String fiscal;
-  String empleados;
-  String administrativos;
-  String otros;
-  String total;
-  String comentarios;
-  String diarias;
-  String semanales;
-  String mensuales;
-  String terreno;
-  String bienes;
-  String aquellos;
-  String ventasEmp;
-  String ventasActivos;
-  String local;
-  String regional;
-  String internacional;
-  String cortoPlazo;
-  String largoPlazo;
-  String comentarioEjecutivo;
 
   factory EmpresaModel.fromJson(Map<String, dynamic> json) => EmpresaModel(
         id: json["id"],
