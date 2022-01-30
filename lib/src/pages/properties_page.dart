@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/models/empresa_model.dart';
 import 'package:remi/src/models/generales_model.dart';
+import 'package:remi/src/models/mercado_model.dart';
 import 'package:remi/src/providers/empresa_provider.dart';
 import 'package:remi/src/providers/generales_provider.dart';
+import 'package:remi/src/providers/mercado_provider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
 import 'package:remi/src/pages/home_page.dart';
 
@@ -17,6 +19,7 @@ class PropertiesPage extends StatefulWidget {
 class _PropertiesPageState extends State<PropertiesPage> {
   final empresaProvider = new EmpresaProvider();
   final generalProvider = new GeneralProvider();
+  final mercadoProvider = new MercadoProvider();
 
   @override
   Widget build(BuildContext context) {
@@ -151,18 +154,20 @@ class _PropertiesPageState extends State<PropertiesPage> {
   Widget _crearListado() {
     Future<List<EmpresaModel>> bar = empresaProvider.cargarEmpresa();
     Future<List<GeneralesModel>> foo = generalProvider.cargarGenerales();
+    Future<List<MercadoModel>> mer = mercadoProvider.cargarMercado();
     return FutureBuilder(
         future: Future.wait([bar, foo]),
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
           if (snapshot.hasData) {
             final empresas = snapshot.data[0];
             final generales = snapshot.data[1];
+            final mercados = snapshot.data[2];
             return ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: empresas.length,
               itemBuilder: (context, i) =>
-                  _crearCard(empresas[i], generales[i]),
+                  _crearCard(empresas[i], generales[i], mercados[i]),
             );
           } else {
             return Center(
@@ -172,7 +177,8 @@ class _PropertiesPageState extends State<PropertiesPage> {
         });
   }
 
-  Widget _crearCard(EmpresaModel empresa, GeneralesModel general) {
+  Widget _crearCard(
+      EmpresaModel empresa, GeneralesModel general, MercadoModel mercado) {
     return SizedBox(
         width: anchuraSizedBox,
         height: alturaSizedBox,
@@ -195,7 +201,7 @@ class _PropertiesPageState extends State<PropertiesPage> {
                   ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/enterprise',
-                            arguments: [empresa, general]);
+                            arguments: [empresa, general, mercado]);
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,
@@ -213,6 +219,8 @@ class _PropertiesPageState extends State<PropertiesPage> {
                       onPressed: () {
                         setState(() {});
                         empresaProvider.borrarEmpresa(empresa.id);
+                        generalProvider.borrarGenerales(general.id);
+                        mercadoProvider.borrarMercado(mercado.id);
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.white,

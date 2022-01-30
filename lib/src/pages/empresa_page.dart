@@ -58,7 +58,7 @@ class _FormPage2State extends State<FormPage2> {
             ),
           ),
         ),
-        backgroundColor: Color.fromRGBO(250, 244, 232, 1));
+        backgroundColor: gStyle.background);
   }
 
   Widget _crearForm() {
@@ -567,7 +567,7 @@ class _FormPage2State extends State<FormPage2> {
     if (prod == null) {
       Navigator.pushNamed(context, '/form');
     } else {
-      Navigator.pushNamed(context, '/form', arguments: prod[1]);
+      Navigator.pushNamed(context, '/form', arguments: prod);
     }
   }
 

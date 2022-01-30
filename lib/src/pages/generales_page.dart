@@ -26,9 +26,9 @@ class _FormPageState extends State<FormPage> {
 
   @override
   Widget build(BuildContext context) {
-    final GeneralesModel gen = ModalRoute.of(context).settings.arguments;
+    final List<dynamic> gen = ModalRoute.of(context).settings.arguments;
     if (gen != null) {
-      generales = gen;
+      generales = gen[1];
     }
 
     return Scaffold(
