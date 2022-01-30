@@ -33,71 +33,32 @@ class _FormPage2State extends State<FormPage2> {
     }
 
     return Scaffold(
-      key: scaffoldEmp,
-      appBar: AppBar(
-        title: Center(
-            child: Text(
-          'REMI',
-          style: GoogleFonts.graduate(),
-        )),
-        backgroundColor: appbar_green,
-        elevation: 0,
-        actions: <Widget>[
-          IconButton(
-              tooltip: 'Ir a perfil',
-              icon: const Icon(Icons.account_circle),
-              onPressed: () {})
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(15.0),
-          child: Form(
-            key: formEmp,
-            child: _crearForm(),
+        key: scaffoldEmp,
+        appBar: AppBar(
+          title: Center(
+              child: Text(
+            'REMI',
+            style: GoogleFonts.graduate(),
+          )),
+          backgroundColor: appbar_green,
+          elevation: 0,
+          actions: <Widget>[
+            IconButton(
+                tooltip: 'Ir a perfil',
+                icon: const Icon(Icons.account_circle),
+                onPressed: () {})
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(15.0),
+            child: Form(
+              key: formEmp,
+              child: _crearForm(),
+            ),
           ),
         ),
-      ),
-    );
-  }
-/*
-  Widget _crearTextAntecendentes() {
-    return Center(
-      child: Text(
-        'ANTECEDENTES DE LA EMPRESA\n',
-        style: gStyle.getTytleTextStyle(),
-        textAlign: TextAlign.center,
-      ),
-    );
-  }
-
-  Widget _crearTextGenerales() {
-    return Text(
-          '1. GENERALES DE LA EMPRESA\n',
-          style: gStyle.getSubTitleTextStyle(),
-        );
-  }
-
-  */
-
-  Widget _crearNombre() {
-    return TextFormField(
-      initialValue: empresa.nombre,
-      decoration: InputDecoration(
-        hintText: "Ingrese el nombre.",
-        enabledBorder: gStyle.getBorderSizeSentenceStyle(),
-        focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
-      ),
-      style: gStyle.getSentenceTextStyle(),
-      onSaved: (value) {
-        empresa.nombre = value;
-      },
-      validator: (value) {
-        if (value.isEmpty) {
-          return 'Enter text';
-        }
-      },
-    );
+        backgroundColor: Color.fromRGBO(250, 244, 232, 1));
   }
 
   Widget _crearForm() {
@@ -118,13 +79,14 @@ class _FormPage2State extends State<FormPage2> {
           '1. GENERALES DE LA EMPRESA\n',
           style: gStyle.getSubTitleTextStyle(),
         ),
-        Text('1.1 NOMBRE:', style: gStyle.getSentenceTextStyle()),
+        Text('1.1 NOMBRE:', style: gStyle.getTextFormTextStyle()),
         TextFormField(
           initialValue: empresa.nombre,
           decoration: InputDecoration(
             hintText: "Ingrese el nombre.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -143,6 +105,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la dirección.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -156,6 +119,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el teléfono.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -170,6 +134,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el R.F.C.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -183,6 +148,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el domicilio fiscal.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -199,6 +165,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el tiempo de antigüedad de la empresa.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -215,6 +182,7 @@ class _FormPage2State extends State<FormPage2> {
                 "Indique si el estatus legal de la empresa corresponde a una persona física.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -229,6 +197,7 @@ class _FormPage2State extends State<FormPage2> {
                 "Indique si el estatus legal de la empresa corresponde a una persona moral.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -243,6 +212,7 @@ class _FormPage2State extends State<FormPage2> {
                 "Indique si el estatus legal de la empresa no se encuentra registrado.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -256,6 +226,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el estatus fiscal de la empresa.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -275,6 +246,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la cantidad de empleados de tipo operativos.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -290,6 +262,7 @@ class _FormPage2State extends State<FormPage2> {
                 "Ingrese la cantidad de empleados de tipo administrativos.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -304,6 +277,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la cantidad de empleados de otro tipo.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -318,6 +292,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el total de empleados.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -332,6 +307,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el comentario sobre los empleados.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -346,6 +322,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la cantidad de ventas diarias.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -360,6 +337,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la cantidad de ventas semanales.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -374,6 +352,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la cantidad de ventas mensuales.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -390,6 +369,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el valor de los terrenos.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -404,6 +384,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el valor de los bienes.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -418,6 +399,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el valor de otros tipos.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -433,6 +415,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el calculo de ventas sobre empleados",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -447,6 +430,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese el calculo de ventas sobre activos",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           keyboardType: TextInputType.number,
@@ -463,6 +447,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Indique si la cobertura es de tipo local.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -476,6 +461,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Indique si la cobertura es de tipo regional.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -489,6 +475,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Indique si la cobertura es de tipo internacional.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -503,6 +490,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la visión de la empresa a corto plazo.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -516,6 +504,7 @@ class _FormPage2State extends State<FormPage2> {
             hintText: "Ingrese la visión de la empresa a largo plazo.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {
@@ -531,6 +520,7 @@ class _FormPage2State extends State<FormPage2> {
                 "Ingrese el comentario ejecutivo de antecedentes de la empresa.",
             enabledBorder: gStyle.getBorderSizeSentenceStyle(),
             focusedBorder: gStyle.getBorderRadiusSentenceStyle(),
+            hintStyle: gStyle.getHintTextStyle(),
           ),
           style: gStyle.getSentenceTextStyle(),
           onSaved: (value) {

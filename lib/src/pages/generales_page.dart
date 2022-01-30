@@ -53,6 +53,7 @@ class _FormPageState extends State<FormPage> {
           ),
         ),
       ),
+      backgroundColor: gStyle.background,
     );
   }
 

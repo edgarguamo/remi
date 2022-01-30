@@ -6,6 +6,7 @@ import 'package:remi/src/bloc/provider.dart';
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/providers/usuario_provider.dart';
 import 'package:remi/src/utils/utils.dart';
+import 'package:remi/src/utils/style.dart' as gStyle;
 
 class LoginPage extends StatelessWidget {
   final usuarioProvider = new UsuarioProvider();
@@ -14,11 +15,13 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: (Center(
-            child: Stack(children: <Widget>[
-      _backgroundLogo(context),
-      _loginForm(context),
-    ]))));
+      body: (Center(
+          child: Stack(children: <Widget>[
+        _backgroundLogo(context),
+        _loginForm(context),
+      ]))),
+      backgroundColor: gStyle.background,
+    );
   }
 
   Widget _backgroundLogo(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:remi/src/widget/navitation_drawer_widget.dart';
+import 'package:remi/src/utils/style.dart' as gStyle;
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, String title}) : super(key: key);
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.only(bottom: 50),
+              margin: const EdgeInsets.only(bottom: 20),
               height: 150,
               width: double.infinity,
               decoration: BoxDecoration(
@@ -113,6 +114,7 @@ class _HomePageState extends State<HomePage> {
                 width: anchuraSizedBox,
                 height: alturaSizedBox,
                 child: Card(
+                    //color: gStyle.background,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
@@ -185,6 +187,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       )),
+      //backgroundColor: gStyle.background,
     );
   }
 }

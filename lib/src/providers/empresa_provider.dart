@@ -5,7 +5,7 @@ import 'package:remi/src/models/empresa_model.dart';
 
 class EmpresaProvider {
   final String _url =
-      'https://plataformas-moviles-d4eeb-default-rtdb.firebaseio.com/';
+      'https://bancayfinanzasflutter-default-rtdb.firebaseio.com/';
 
   Future<bool> editarEmpresa(EmpresaModel empresa) async {
     final url = '$_url/empresa/${empresa.id}.json';

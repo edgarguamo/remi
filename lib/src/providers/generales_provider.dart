@@ -5,7 +5,7 @@ import 'package:remi/src/models/generales_model.dart';
 
 class GeneralProvider {
   final String _url =
-      'https://plataformas-moviles-d4eeb-default-rtdb.firebaseio.com/';
+      'https://bancayfinanzasflutter-default-rtdb.firebaseio.com/';
 
   Future<bool> editarGenerales(GeneralesModel generales) async {
     final url = '$_url/generales/${generales.id}.json';
