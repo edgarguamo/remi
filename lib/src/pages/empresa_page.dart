@@ -58,7 +58,7 @@ class _FormPage2State extends State<FormPage2> {
             ),
           ),
         ),
-        backgroundColor: Color.fromRGBO(250, 244, 232, 1));
+        backgroundColor: gStyle.background);
   }
 
   Widget _crearForm() {
