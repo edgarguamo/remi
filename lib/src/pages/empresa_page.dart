@@ -567,7 +567,7 @@ class _FormPage2State extends State<FormPage2> {
     if (prod == null) {
       Navigator.pushNamed(context, '/form');
     } else {
-      Navigator.pushNamed(context, '/form', arguments: prod[1]);
+      Navigator.pushNamed(context, '/form', arguments: prod);
     }
   }
 

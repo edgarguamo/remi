@@ -5,6 +5,7 @@ import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/pages/login_page.dart';
 import 'package:remi/src/pages/properties_page.dart';
 import 'package:remi/src/pages/register_page.dart';
+import 'package:remi/src/pages/mercado_page.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
   return <String, WidgetBuilder>{
@@ -16,5 +17,6 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
           title: 'form page',
         ),
     '/enterprise': (BuildContext context) => FormPage2(),
+    '/mercado': (BuildContext context) => FormPage3(),
   };
 }

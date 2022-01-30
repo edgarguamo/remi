@@ -2,12 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:remi/src/models/empresa_model.dart';
 
 import 'package:remi/src/pages/home_page.dart';
 import 'package:remi/src/models/generales_model.dart';
 import 'package:remi/src/providers/generales_provider.dart';
-import 'package:remi/src/widget/navitation_drawer_widget.dart';
 import 'package:remi/src/utils/style.dart' as gStyle;
 
 class FormPage extends StatefulWidget {
@@ -26,9 +24,9 @@ class _FormPageState extends State<FormPage> {
 
   @override
   Widget build(BuildContext context) {
-    final GeneralesModel gen = ModalRoute.of(context).settings.arguments;
-    if (gen != null) {
-      generales = gen;
+    final List<dynamic> prod = ModalRoute.of(context).settings.arguments;
+    if (prod != null) {
+      generales = prod[1];
     }
 
     return Scaffold(
@@ -1017,8 +1015,12 @@ class _FormPageState extends State<FormPage> {
     mostrarSnackbar('Información guardada');
 
     Navigator.pop(context);
-
-    Navigator.pushNamed(context, '/prop');
+    final List<dynamic> prod = ModalRoute.of(context).settings.arguments;
+    if (prod == null) {
+      Navigator.pushNamed(context, '/mercado');
+    } else {
+      Navigator.pushNamed(context, '/mercado', arguments: prod);
+    }
   }
 
   void mostrarSnackbar(String mensaje) {
